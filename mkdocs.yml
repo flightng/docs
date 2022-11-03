@@ -5,7 +5,7 @@ edit_uri: ../gyroflow-docs/edit/main/docs
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://gihtub.com/flightng
+      link: https://github.com/flightng
       name: FlightNG GitHub Organization
 
 theme:
