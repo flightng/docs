@@ -20,5 +20,5 @@ jobs:
           CUSTOM_DOMAIN: flightng.com
           CONFIG_FILE: mkdocs.yml
           EXTRA_PACKAGES: build-base
-          GITHUB_DOMAIN: flightng.github.io
+          # GITHUB_DOMAIN: flightng.github.io
           REQUIREMENTS: requirements.txt
