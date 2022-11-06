@@ -47,6 +47,8 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - footnotes
   - tables
 
@@ -59,3 +61,4 @@ extra_css:
 
 nav:
   - 主页: index.md
+  - 赞助: sponsor.md
