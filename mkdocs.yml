@@ -61,4 +61,7 @@ extra_css:
 
 nav:
   - 主页: index.md
+  - atbetaflight:
+      - 概览: atbetaflight/index.md
+      - 使用教程: atbetaflight/tutorial.md
   - 赞助: sponsor.md

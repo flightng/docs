@@ -37,9 +37,10 @@ Thank you for your support! You can become a sponsor by:
 
 ## 已完成的资助目标/ Completed funding goals
 
-
-- [x] xxx
-- [x] xxx
+- [x] Rebase atbetaflight to betaflight 4.3.1
+- [x] F435 Flight Controller (LQFP64)
+- [x] F435 Flight Controller (QFN48)
+- [x] iNavFlight port
 - [x] xxx
 
 
