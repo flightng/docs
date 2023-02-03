@@ -5,7 +5,7 @@
 - Artery DFU 驱动 | Artery DFU Driver
 - Betaflight 配置程序 (特殊版本) | Betaflight Configurator (Special nightly version)
 
-[Artery DFU Driver](){ .md-button .md-button--primary} [Betaflight Configurator nightly v20230129.363](https://github.com/betaflight/betaflight-configurator-nightlies/releases/tag/v20230129.363){ .md-button .md-button--primary}
+[Artery DFU Driver](https://we.tl/t-JOhrAN9Des){ .md-button .md-button--primary} [Betaflight Configurator nightly v20230129.363](https://github.com/betaflight/betaflight-configurator-nightlies/releases/tag/v20230129.363){ .md-button .md-button--primary}
 
 ## 下载固件 | Download firmware
 
