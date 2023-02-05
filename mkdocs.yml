@@ -64,4 +64,10 @@ nav:
   - atbetaflight:
       - 概览: atbetaflight/index.md
       - 使用教程: atbetaflight/tutorial.md
+  - 硬件设计:
+      - 概览: hardware/overview.md
+      - 设计细则:
+          - 选型规格: hardware/spec.md
+          - 设计规范: hardware/design.md
+      - 参考资源: hardware/resources.md
   - 赞助: sponsor.md
