@@ -22,9 +22,8 @@ The latest and historical firmware are available from [GitHub Releases](https://
 |MCU|BOARD|FIRMWARE(bin or hex)|comment|
 |--|--|--|--|
 |AT32F435VMT7| EMSRPROTO2\ 重山1.2 |betaflight-xxx-EMSRPROTO2-xxxxxx |LQFP 100 DIY|
-|AT32F437RGT7| EMSRPROTO3 |betaflight-xxx-EMSRPROTO3-xxxxxx |LQFP100|
+|AT32F437VGT7| EMSRPROTO3 |betaflight-xxx-EMSRPROTO3-xxxxxx |LQFP100|
 |AT32F435RGT7| NEUTRONRCF435SE  | betaflight-xxx-NEUTRONRCF435SE-xxxxxxx |LQFP64|
-|AT32F435RGT7| NEUTRONRCF435AIO | betaflight-xxx-NEUTRONRCF435SE-xxxxxxx |LQFP64|
 |AT32F435CGU7| NEUTRONRCF435MINI|betaflight-xxx-NEUTRONRCF435MINI-xxxxxxx|QNF48|
 
 
@@ -38,7 +37,7 @@ The latest and historical firmware are available from [GitHub Releases](https://
 6. 和普通F4 飞控一样的进行刷写 | Flash the firmware 
 
 ## 注意事项 | Notes
-* 如果是自己DIY的飞控板，需要使用雅特力的刷写工具，初始化用户系统数据 | if the mcu is empty you should flash the "User System Settings Data" ,using the Artery ISP Programmer 
+* 仅DIY的空白mcu飞控板，需要使用雅特力的刷写工具，刷写1次用户系统数据，之后无需再次刷写，成品飞控无需刷写 | if the mcu is empty you should flash the "User System Settings Data"  only once,using the Artery ISP Programmer 
 * 如果FC 不在DFU 模式，请勿勾选“无重启序列” 选项 | if the fc is not in dfu mode , please do not choose "no reboot sequence" option 
 
 TBA
