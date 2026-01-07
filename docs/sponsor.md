@@ -18,11 +18,11 @@ Sponsorships make this project sustainable, as they buy the maintainers of this 
     regularly.
 
 
-如果您不确定是否应该赞助这个项目，请查看[已完成的资助目标](#-已完成的资助目标/-completed-funding-goals)列表，以了解您是否已经在使用在赞助帮助下开发的功能。感谢我们出色的赞助商，您很可能至少会使用其中的一些功能！
+如果您不确定是否应该赞助这个项目，请查看[已完成的资助目标](#completed-goals)列表，以了解您是否已经在使用在赞助帮助下开发的功能。感谢我们出色的赞助商，您很可能至少会使用其中的一些功能！
 
-If you're unsure if you should sponsor this project, check out the list of [completed funding goals](#-已完成的资助目标/-completed-funding-goals) to learn whether you're already using features that were developed with the help of sponsorships. You're most likely using at least a handful of them, thanks to our [awesome sponsors](#-如何成为赞助者？/-How-to-become-a-sponsor?)!
+If you're unsure if you should sponsor this project, check out the list of [completed funding goals](#completed-goals) to learn whether you're already using features that were developed with the help of sponsorships. You're most likely using at least a handful of them, thanks to our [awesome sponsors](#how-to-sponsor)!
 
-## 如何成为赞助者？/ How to become a sponsor?
+## 如何成为赞助者？/ How to become a sponsor? {#how-to-sponsor}
 
 感谢您的支持！您可以通过以下方式成为赞助者：
 
@@ -35,7 +35,7 @@ Thank you for your support! You can become a sponsor by:
 - xxx
 
 
-## 已完成的资助目标/ Completed funding goals
+## 已完成的资助目标/ Completed funding goals {#completed-goals}
 
 - [x] Rebase atbetaflight to betaflight 4.3.1
 - [x] F435 Flight Controller (LQFP64)
