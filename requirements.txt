@@ -1,1 +1,2 @@
-git+https://github.com/g-provost/lightgallery-markdown#egg=lightgallery
+mkdocs-material
+mkdocs-glightbox
