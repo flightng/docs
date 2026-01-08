@@ -1,12 +1,15 @@
 # Rate Profiles
 
+!!! warning "Page Incomplete"
+    This page is not yet complete and is for reference only.
+
 Rate profiles define the relationship between stick position and aircraft rotation speed.
 
 ---
 
 ## Rate Profile Types
 
-Fydelix supports multiple rate profiles:
+Fidelity X supports multiple rate profiles:
 
 | Type | Characteristics |
 |------|-----------------|

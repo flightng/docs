@@ -1,6 +1,9 @@
 # Firmware Flashing
 
-This guide explains how to flash Fydelix firmware to your flight controller.
+!!! warning "Page Incomplete"
+    This page is not yet complete and is for reference only.
+
+This guide explains how to flash Fidelity X firmware to your flight controller.
 
 ---
 
@@ -62,7 +65,7 @@ Disconnect USB, reconnect, and the flight controller will run the new firmware.
 
 ## Using CLI to Enter DFU
 
-If the flight controller is already running Fydelix, you can enter DFU mode via command:
+If the flight controller is already running Fidelity X, you can enter DFU mode via command:
 
 ```
 bootloader

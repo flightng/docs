@@ -8,12 +8,11 @@ hide:
 
 <div class="hero" markdown>
 
-## :material-rocket-launch: Fydelix 飞控固件
+## :material-rocket-launch: Fidelity X 飞控固件
 
 **下一代穿越机飞控固件，专为性能而生**
 
-Fydelix 是由 FlightNG 团队历时三年精心打造的全新飞控固件，
-基于实时操作系统，专为 AT32F43x 高性能芯片优化。
+Fidelity X 是 FlightNG 团队精心打造的下一代飞控固件，基于实时操作系统架构，专为空中特技飞行而设计。
 
 [开始使用 :material-arrow-right:](fydelix/index.md){ .md-button .md-button--primary }
 [下载固件](https://github.com/flightng/fydelix/releases){ .md-button }
@@ -22,33 +21,33 @@ Fydelix 是由 FlightNG 团队历时三年精心打造的全新飞控固件，
 
 ---
 
-## 为什么选择 Fydelix？
+## 为什么选择 Fidelity X？
 
 <div class="grid cards" markdown>
 
--   :material-lightning-bolt:{ .lg .middle } **卓越性能**
+-   :material-chip:{ .lg .middle } **高性能架构**
 
     ---
 
-    基于 AT32F435/437 芯片，288MHz 主频，为飞控算法提供充足算力
+    基于实时操作系统构建，多任务并行处理，确保陀螺仪采样、姿态计算和电机输出的精确时序
 
 -   :material-shield-check:{ .lg .middle } **安全可靠**
 
     ---
 
-    完善的二阶段失控保护机制，智能解锁检测，确保飞行安全
+    得益于 RTOS 抢占式调度，独立的 Failsafe 线程确保飞机只会受控降落或停机，而不会以不可预期的方式坠毁
 
--   :material-tune:{ .lg .middle } **先进调参**
-
-    ---
-
-    先进的滤波系统和 PID 控制器，让你的飞机响应更灵敏、手感更细腻
-
--   :material-monitor-dashboard:{ .lg .middle } **功能齐全**
+-   :material-filter:{ .lg .middle } **先进滤波**
 
     ---
 
-    OSD 显示、Blackbox 日志、多协议遥控支持，一应俱全
+    基于对消费级 MEMS 陀螺仪特性的深入理解，精心调教的滤波器参数带来丝滑体验与灵敏响应
+
+-   :material-gauge:{ .lg .middle } **灵活调参**
+
+    ---
+
+    多种速率曲线支持共存，PID 参数兼容 Betaflight，轻松迁移你熟悉的调参设置
 
 </div>
 
@@ -56,7 +55,7 @@ Fydelix 是由 FlightNG 团队历时三年精心打造的全新飞控固件，
 
 ## 支持的硬件
 
-Fydelix 支持多款主流飞控板：
+Fidelity X 支持多款主流飞控板：
 
 | 飞控板 | MCU | 封装 |
 |--------|-----|------|
@@ -72,7 +71,7 @@ Fydelix 支持多款主流飞控板：
 
 ## 其他项目
 
-除了 Fydelix，FlightNG 团队还维护以下开源项目：
+除了 Fidelity X，FlightNG 团队还维护以下开源项目：
 
 <div class="grid cards" markdown>
 

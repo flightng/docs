@@ -24,10 +24,10 @@ Based on Betaflight 4.3.1, with the following additions:
 
 ---
 
-## Differences from Fydelix
+## Differences from Fidelity X
 
-| Item | atbetaflight | Fydelix |
-|------|--------------|---------|
+| Item | atbetaflight | Fidelity X |
+|------|--------------|------------|
 | Base | Betaflight port | Built from scratch |
 | Config Tool | Betaflight Configurator | CLI |
 | Learning Curve | Low (for BF users) | Medium |

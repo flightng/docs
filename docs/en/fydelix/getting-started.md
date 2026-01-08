@@ -1,6 +1,6 @@
 # Getting Started
 
-This guide will help you get started with Fydelix firmware quickly.
+This guide will help you get started with Fidelity X firmware quickly.
 
 ---
 
@@ -16,8 +16,11 @@ This guide will help you get started with Fydelix firmware quickly.
 
 | Software | Purpose | Source |
 |----------|---------|--------|
-| Artery ISP Programmer | Firmware flashing | [Artery Website](https://www.arterytek.com/en/support/index.jsp) |
-| Serial Terminal | Configuration | PuTTY / Tera Term / minicom |
+| Artery DFU Driver | Firmware flashing | [Artery Website](https://www.arterytek.com/en/support/index.jsp) |
+| Chrome/Chromium Browser | Configurator access | Must support WebUSB/WebSerial |
+
+!!! info "Browser Requirements"
+    A browser with WebUSB/WebSerial support is required. Chrome or Chromium-based browsers (such as Edge, Brave, etc.) are recommended.
 
 ---
 
@@ -41,59 +44,73 @@ See [Firmware Flashing Guide](flashing.md) for detailed steps.
 1. Press and hold the **BOOT** button
 2. Connect USB cable to computer
 3. Release BOOT button
-4. Flash firmware using Artery ISP Programmer
+4. Select the local firmware file in Configurator
+5. Click the flash button
 
 ### 3. First Connection
 
-After flashing, reconnect USB and connect to the flight controller using a serial terminal:
+After flashing, connect to the flight controller using Configurator:
 
-- **Baud rate**: 115200
-- **Data bits**: 8
-- **Stop bits**: 1
-
-You'll see the command prompt `msh />` after successful connection.
+1. Click the **Connect** button in the top right corner
+2. Select **FlightNG FC** from the popup menu
 
 ---
 
 ## Basic Setup
 
-### Calibrate Accelerometer
+### Check Flight Controller Orientation
+
+First, verify that the flight controller orientation is correct:
+
+1. Observe the aircraft attitude displayed in Configurator
+2. Move the actual aircraft and confirm the virtual aircraft follows accordingly
+3. If they don't match, click the **Edit** button in the top right corner of the aircraft display box on the Status page
+4. Select the correct flight controller orientation
+5. Save and restart until the orientation is correct
+
+### Calibrate IMU
 
 You must calibrate the accelerometer before first flight:
 
 1. Place the aircraft on a **level surface**
-2. Enter command: `accel_cal`
+2. Click the **Calibrate** button in the top right corner of the aircraft display box
 3. Wait for calibration to complete
+4. Restart the flight controller
 
 !!! warning "Warning"
     Do not move the aircraft during calibration!
 
-### Configure RC
-
-Set the RC protocol based on your transmitter:
-
-```
-# CRSF protocol
-param set RC_CONFIG_PROTOCOL 0
-
-# SBUS protocol
-param set RC_CONFIG_PROTOCOL 1
-
-# Save settings
-param save
-```
-
-### Verify Motors
+### Configure Motors
 
 !!! danger "Safety Warning"
-    **Remove propellers** before testing motors!
+    **Remove propellers** before configuring motors! ESC must be powered on.
 
-Use motor test commands to verify motor direction:
+On the Motor page, configure the following:
 
-```
-motor test 1 0.1    # Test motor 1, 10% throttle
-motor stop          # Stop test
-```
+1. **Configure motor pole pairs**: Set according to your motor specifications
+2. **Configure propeller rotation direction**: Set the correct rotation direction
+3. **Check motor order and direction**:
+    - Verify motor positions and directions match expectations on the Motor Map
+    - If they don't match, you can edit directly on the Motor Map
+    - Click on a motor position to change its rotation direction
+    - Use the arrows to change motor position
+    - Adjust until everything matches expectations
+
+### Configure Receiver
+
+With the receiver powered on:
+
+1. Go to the Stick Preview page to view stick status
+2. Move the transmitter sticks and confirm the display matches your actual inputs
+3. If they don't match, click the **Edit** button in the top right corner to modify:
+    - **Channel mapping**: Adjust channel assignments
+    - **Polarity**: Fix reversed directions
+    - **Deadband**: Adjust stick deadband size
+4. The **AuxFunction** section allows you to bind functions to specific channels:
+    - Arm
+    - Pre-arm
+    - Angle Mode
+    - Other functions...
 
 ---
 
@@ -101,10 +118,12 @@ motor stop          # Stop test
 
 Before flying, confirm:
 
-- [ ] Accelerometer calibrated
-- [ ] Motor direction correct
+- [ ] Flight controller orientation correct
+- [ ] IMU calibrated
+- [ ] Motor direction and order correct
 - [ ] Propellers installed correctly (check CW/CCW)
-- [ ] Transmitter bound
+- [ ] Receiver channel mapping correct
+- [ ] Arm switch configured
 - [ ] Battery voltage normal
 - [ ] Failsafe test passed
 
@@ -113,8 +132,10 @@ Before flying, confirm:
 ## Next Steps
 
 - [Configure PID](configuration/pid-tuning.md) - Optimize flight feel
-- [Configure Filters](configuration/filters.md) - Reduce noise
 - [Learn about Failsafe](configuration/failsafe.md) - Ensure flight safety
+
+!!! note "About Filters"
+    Fidelity X firmware uses hardcoded filters by design. Users should not adjust filter parameters.
 
 ---
 
@@ -123,15 +144,15 @@ Before flying, confirm:
 ??? question "Cannot enter DFU mode"
     - Make sure to hold BOOT button before connecting USB
     - Check if USB cable is a data cable (not charge-only)
+    - Confirm Artery DFU driver is installed
     - Try different USB port
 
-??? question "Serial port not responding"
-    - Confirm baud rate is 115200
-    - Check if correct COM port is selected
+??? question "Configurator cannot connect"
+    - Confirm you are using Chrome or a Chromium-based browser
+    - Check if browser supports WebUSB/WebSerial
     - Try reconnecting USB
 
 ??? question "Motors not spinning"
     - Confirm successful arm
-    - Check motor protocol settings
-    - Check ESC connection
-
+    - Check motor pole pair settings
+    - Check ESC connection and power

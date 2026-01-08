@@ -1,12 +1,15 @@
 # 配置指南
 
-本章节介绍如何配置 Fydelix 固件。
+!!! warning "页面未完成"
+    本页面内容尚未完成，仅供参考。
+
+本章节介绍如何配置 Fidelity X 固件。
 
 ---
 
 ## 参数系统
 
-Fydelix 使用参数系统进行配置。所有配置都通过 CLI 命令完成。
+Fidelity X 使用参数系统进行配置。所有配置都通过 CLI 命令完成。
 
 ### 基本操作
 
@@ -35,14 +38,6 @@ Fydelix 使用参数系统进行配置。所有配置都通过 CLI 命令完成�
     调整飞行响应和手感
 
     [:octicons-arrow-right-24: 前往](pid-tuning.md)
-
--   :material-filter:{ .lg .middle } **滤波器**
-
-    ---
-
-    优化信号质量，减少噪声
-
-    [:octicons-arrow-right-24: 前往](filters.md)
 
 -   :material-gauge:{ .lg .middle } **速率曲线**
 

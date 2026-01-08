@@ -1,16 +1,15 @@
-# Fydelix Firmware
+# Fidelity X Firmware
 
-**Next-generation flight controller firmware designed for FPV**
-
-[Download Firmware](https://github.com/flightng/fydelix/releases){ .md-button .md-button--primary }
+[Open Configurator](https://flightng.github.io/test-configurator){ .md-button .md-button--primary }
+[Download Firmware](https://github.com/flightng/firmware/releases){ .md-button }
 
 ---
 
 ## Introduction
 
-Fydelix is a next-generation flight controller firmware crafted by the FlightNG team, built on a real-time operating system architecture and designed specifically for acrobatic flight.
+Fidelity X is a next-generation flight controller firmware crafted by the FlightNG team, built on a real-time operating system architecture and designed specifically for acrobatic flight.
 
-Whether you're a freestyle pilot or a racer, Fydelix delivers a smooth and precise flight experience.
+Whether you're a freestyle pilot or a racer, Fidelity X delivers a smooth and precise flight experience.
 
 ---
 
@@ -30,7 +29,7 @@ Based on a deep understanding of consumer-grade MEMS gyroscope characteristics, 
 
 ### :material-gauge: Flexible Tuning Options
 
-- **Multiple rate curves**: Supports FlightOne, KISS, Betaflight, and Actual — four curve types that can coexist, allowing Yaw, Pitch, and Roll to use different curves simultaneously
+- **Multiple rate curves**: Supports FlightOne, Betaflight, and Actual — three curve types that can coexist, allowing Yaw, Pitch, and Roll to use different curves simultaneously
 - **PID parameters compatible with Betaflight**: Easily migrate your familiar tuning settings
 - **Integrated tuning experience**: Deep integration with blackbox analysis for more efficient tuning
 
@@ -58,7 +57,7 @@ Based on a deep understanding of consumer-grade MEMS gyroscope characteristics, 
 
 **v0.1.3**
 
-Check the [Changelog](https://github.com/flightng/fydelix/releases) for latest updates.
+Check the [Changelog](https://github.com/flightng/firmware/releases) for latest updates.
 
 ---
 

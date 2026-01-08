@@ -1,6 +1,6 @@
 # Supported Hardware
 
-Fydelix supports multiple AT32F43x-based flight controllers.
+Fidelity X supports multiple AT32F43x-based flight controllers.
 
 ---
 
@@ -119,5 +119,5 @@ Some boards have firmware with `_legacy` suffix for compatibility with older har
 
 ## Adding New Board Support
 
-If you're a flight controller manufacturer and want Fydelix to support your board, please contact us via GitHub.
+If you're a flight controller manufacturer and want Fidelity X to support your board, please contact us via GitHub.
 

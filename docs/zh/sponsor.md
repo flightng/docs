@@ -25,9 +25,9 @@
 
 ## 已完成的里程碑
 
-### Fydelix 项目 :material-new-box:
+### Fidelity X 项目 :material-new-box:
 
-经过三年孵化，Fydelix 已完成：
+经过三年孵化，Fidelity X 已完成：
 
 - [x] 实时操作系统架构
 - [x] 多 IMU 支持（BMI270、ICM-42688-P、QMI8658C）
@@ -50,7 +50,7 @@
 
 ## 进行中
 
-### Fydelix 路线图
+### Fidelity X 路线图
 
 - [ ] GPS/导航功能
 - [ ] 自动调参

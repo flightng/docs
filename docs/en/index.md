@@ -8,12 +8,11 @@ hide:
 
 <div class="hero" markdown>
 
-## :material-rocket-launch: Fydelix Flight Controller Firmware
+## :material-rocket-launch: Fidelity X Flight Controller Firmware
 
 **Next-generation FPV flight controller firmware, built for performance**
 
-Fydelix is a brand-new flight controller firmware crafted by the FlightNG team over three years,
-built on a real-time operating system and optimized for AT32F43x high-performance chips.
+Fidelity X is a next-generation flight controller firmware crafted by the FlightNG team, built on a real-time operating system architecture and designed specifically for acrobatic flight.
 
 [Get Started :material-arrow-right:](fydelix/index.md){ .md-button .md-button--primary }
 [Download Firmware](https://github.com/flightng/fydelix/releases){ .md-button }
@@ -22,33 +21,33 @@ built on a real-time operating system and optimized for AT32F43x high-performanc
 
 ---
 
-## Why Choose Fydelix?
+## Why Choose Fidelity X?
 
 <div class="grid cards" markdown>
 
--   :material-lightning-bolt:{ .lg .middle } **Outstanding Performance**
+-   :material-chip:{ .lg .middle } **High-Performance Architecture**
 
     ---
 
-    Based on AT32F435/437 chips with 288MHz clock speed, providing ample computing power for flight algorithms
+    Built on a real-time operating system with multi-task parallel processing, ensuring precise timing for gyro sampling, attitude calculation, and motor output
 
 -   :material-shield-check:{ .lg .middle } **Safe & Reliable**
 
     ---
 
-    Comprehensive two-stage failsafe protection mechanism with intelligent arming detection ensures flight safety
+    Thanks to RTOS preemptive scheduling, an independent Failsafe thread ensures the aircraft will only perform a controlled landing or disarm, rather than crash unpredictably
 
--   :material-tune:{ .lg .middle } **Advanced Tuning**
-
-    ---
-
-    Advanced filtering system and PID controller for more responsive and refined flight feel
-
--   :material-monitor-dashboard:{ .lg .middle } **Feature Complete**
+-   :material-filter:{ .lg .middle } **Advanced Filtering**
 
     ---
 
-    OSD display, Blackbox logging, multi-protocol RC support, all included
+    Based on deep understanding of consumer-grade MEMS gyroscope characteristics, carefully tuned filter parameters deliver a silky-smooth experience with responsive handling
+
+-   :material-gauge:{ .lg .middle } **Flexible Tuning**
+
+    ---
+
+    Multiple rate curves that can coexist, PID parameters compatible with Betaflight, easily migrate your familiar tuning settings
 
 </div>
 
@@ -56,7 +55,7 @@ built on a real-time operating system and optimized for AT32F43x high-performanc
 
 ## Supported Hardware
 
-Fydelix supports multiple mainstream flight controllers:
+Fidelity X supports multiple mainstream flight controllers:
 
 | Flight Controller | MCU | Package |
 |-------------------|-----|---------|
@@ -72,7 +71,7 @@ Fydelix supports multiple mainstream flight controllers:
 
 ## Other Projects
 
-Besides Fydelix, the FlightNG team also maintains:
+Besides Fidelity X, the FlightNG team also maintains:
 
 <div class="grid cards" markdown>
 

@@ -44,6 +44,15 @@ plugins:
       lang:
         - en
         - zh
+  # - blog:
+  #     blog_dir: blog
+  #     blog_toc: true
+  #     post_date_format: yyyy年MM月dd日
+  #     post_url_format: "{slug}"
+  #     post_excerpt: required
+  #     post_excerpt_separator: <!-- more -->
+  #     archive_toc: true
+  #     categories_toc: true
   - i18n:
       docs_structure: folder
       fallback_to_default: true
@@ -57,7 +66,7 @@ plugins:
           build: true
           nav_translations:
             首页: Home
-            Fydelix 固件: Fydelix Firmware
+            Fidelity X 固件: Fidelity X Firmware
             概览: Overview
             快速开始: Getting Started
             功能特性: Features
@@ -65,11 +74,11 @@ plugins:
             固件烧录: Flashing
             配置指南: Configuration
             PID 调参: PID Tuning
-            滤波器: Filters
             速率曲线: Rate Profiles
             安全系统: Failsafe
             CLI 命令: CLI Commands
             其他项目: Other Projects
+            # 博客: Blog
             赞助: Sponsor
   - glightbox:
       touchNavigation: true
@@ -110,7 +119,7 @@ extra_css:
 
 nav:
   - 首页: index.md
-  - Fydelix 固件:
+  - Fidelity X 固件:
       - 概览: fydelix/index.md
       - 快速开始: fydelix/getting-started.md
       - 功能特性: fydelix/features.md
@@ -119,11 +128,11 @@ nav:
       - 配置指南:
           - 概览: fydelix/configuration/index.md
           - PID 调参: fydelix/configuration/pid-tuning.md
-          - 滤波器: fydelix/configuration/filters.md
           - 速率曲线: fydelix/configuration/rate-profiles.md
           - 安全系统: fydelix/configuration/failsafe.md
       - CLI 命令: fydelix/cli-reference.md
   - 其他项目:
       - atbetaflight: atbetaflight/index.md
       - atbetaflight 教程: atbetaflight/tutorial.md
+  # - 博客: blog/index.md
   - 赞助: sponsor.md

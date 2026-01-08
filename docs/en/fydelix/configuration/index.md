@@ -1,12 +1,15 @@
 # Configuration Guide
 
-This section covers how to configure Fydelix firmware.
+!!! warning "Page Incomplete"
+    This page is not yet complete and is for reference only.
+
+This section covers how to configure Fidelity X firmware.
 
 ---
 
 ## Parameter System
 
-Fydelix uses a parameter system for configuration. All configuration is done via CLI commands.
+Fidelity X uses a parameter system for configuration. All configuration is done via CLI commands.
 
 ### Basic Operations
 
@@ -35,14 +38,6 @@ Fydelix uses a parameter system for configuration. All configuration is done via
     Adjust flight response and feel
 
     [:octicons-arrow-right-24: Go](pid-tuning.md)
-
--   :material-filter:{ .lg .middle } **Filters**
-
-    ---
-
-    Optimize signal quality, reduce noise
-
-    [:octicons-arrow-right-24: Go](filters.md)
 
 -   :material-gauge:{ .lg .middle } **Rate Profiles**
 

@@ -1,16 +1,15 @@
-# Fydelix 固件
+# Fidelity X 固件
 
-**专为穿越机设计的下一代飞控固件**
-
-[下载固件](https://github.com/flightng/fydelix/releases){ .md-button .md-button--primary }
+[访问 Configurator](https://flightng.github.io/test-configurator){ .md-button .md-button--primary }
+[下载固件](https://github.com/flightng/firmware/releases){ .md-button }
 
 ---
 
 ## 简介
 
-Fydelix 是 FlightNG 团队精心打造的下一代飞控固件，基于实时操作系统架构，专为空中特技飞行而设计。
+Fidelity X 是 FlightNG 团队精心打造的下一代飞控固件，基于实时操作系统架构，专为空中特技飞行而设计。
 
-无论你是自由式飞手还是竞速选手，Fydelix 都能为你提供流畅、精准的飞行体验。
+无论你是自由式飞手还是竞速选手，Fidelity X 都能为你提供流畅、精准的飞行体验。
 
 ---
 
@@ -30,7 +29,7 @@ Fydelix 是 FlightNG 团队精心打造的下一代飞控固件，基于实时�
 
 ### :material-gauge: 灵活的调参选项
 
-- **多种速率曲线**：支持 FlightOne、KISS、Betaflight、Actual 四种曲线，且支持共存——Yaw、Pitch、Roll 可同时使用不同曲线，互不影响
+- **多种速率曲线**：支持 FlightOne、Betaflight、Actual 三种曲线，且支持共存——Yaw、Pitch、Roll 可同时使用不同曲线，互不影响
 - **PID 参数兼容 Betaflight**：轻松迁移你熟悉的调参设置
 - **一体化调参体验**：与黑盒分析深度结合，让调参更高效
 
@@ -58,7 +57,7 @@ Fydelix 是 FlightNG 团队精心打造的下一代飞控固件，基于实时�
 
 **v0.1.3**
 
-查看 [更新日志](https://github.com/flightng/fydelix/releases) 了解最新更新。
+查看 [更新日志](https://github.com/flightng/firmware/releases) 了解最新更新。
 
 ---
 

@@ -25,9 +25,9 @@ The most valuable resource for open source projects is maintainer time. Your sup
 
 ## Completed Milestones
 
-### Fydelix Project :material-new-box:
+### Fidelity X Project :material-new-box:
 
-After three years of incubation, Fydelix has completed:
+After three years of incubation, Fidelity X has completed:
 
 - [x] Real-time operating system architecture
 - [x] Multi-IMU support (BMI270, ICM-42688-P, QMI8658C)
@@ -50,7 +50,7 @@ After three years of incubation, Fydelix has completed:
 
 ## In Progress
 
-### Fydelix Roadmap
+### Fidelity X Roadmap
 
 - [ ] GPS/Navigation features
 - [ ] Auto-tuning

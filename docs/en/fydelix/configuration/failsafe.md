@@ -1,6 +1,9 @@
 # Safety System (Failsafe)
 
-Fydelix has built-in comprehensive safety protection to ensure flight safety.
+!!! warning "Page Incomplete"
+    This page is not yet complete and is for reference only.
+
+Fidelity X has built-in comprehensive safety protection to ensure flight safety.
 
 !!! info "Always Enabled"
     The safety system is always enabled and cannot be disabled.

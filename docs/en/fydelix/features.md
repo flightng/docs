@@ -1,45 +1,36 @@
 # Features
 
-Fydelix provides rich features for an excellent flight experience.
+Fidelity X provides rich features for an excellent flight experience.
 
 ---
 
 ## Real-Time Operating System
 
-Fydelix is built on a mature real-time operating system architecture, providing:
+Fidelity X is built on a mature real-time operating system architecture, providing:
 
 - **Deterministic scheduling**: Ensures critical tasks execute on time
 - **Multi-task processing**: Gyro sampling, attitude calculation, and motor output run in parallel
-- **Efficient resource management**: Fully utilizes AT32 chip performance
+- **Efficient resource management**: Fully utilizes chip performance
 
 ---
 
 ## Advanced Filtering System
 
-Noise is the enemy of flight controller performance. Fydelix offers multiple filter options:
+Noise is the enemy of flight controller performance. Fidelity X employs a meticulously designed filtering architecture that achieves the optimal balance between noise suppression and system responsiveness.
 
 ### Gyro Filtering
 
-Effectively suppresses noise from motor vibration and frame resonance for cleaner attitude data.
+Based on deep understanding of consumer-grade MEMS gyroscope characteristics, we have carefully tuned filter parameters to precisely capture attitude changes while effectively suppressing motor vibration, frame resonance, and sensor white noise—providing clean, reliable data for attitude estimation.
 
 ### D-Term Filtering
 
-Specifically filters PID D-term to prevent D-term from amplifying high-frequency noise causing motor heating.
-
-### Filter Types
-
-| Type | Characteristics | Use Case |
-|------|-----------------|----------|
-| PT1/PT2/PT3 | High efficiency | General use |
-| Biquad | Flexible | Most scenarios |
-| Butterworth | Flat passband | Smooth response needed |
-| Chebyshev | Steep cutoff | High noise environment |
+Purpose-built low phase-shift filter for the PID derivative term, minimizing phase distortion to maintain ultra-high system responsiveness while effectively suppressing motor heating caused by D-term amplification of high-frequency noise.
 
 ---
 
 ## Safety Protection System
 
-Fydelix has built-in comprehensive safety protection, **always enabled, cannot be disabled**.
+Fidelity X has built-in comprehensive safety protection, **always enabled, cannot be disabled**.
 
 ### RC Loss Protection
 
@@ -80,6 +71,7 @@ Choose based on your flight style:
 |------------|-----------------|
 | Betaflight Rate | Compatible with Betaflight, easy migration |
 | Actual Rate | More intuitive, directly set max angular velocity |
+| FlightOne Rate | Compatible with FalcoX, easy migration |
 
 ---
 
@@ -100,12 +92,7 @@ Display includes:
 
 Supports recording flight data to onboard Flash for post-flight analysis and tuning.
 
-Records:
-
-- Gyro data
-- RC input
-- Motor output
-- PID output
+Features a brand-new Flash storage format based on the Gorilla time-series compression algorithm, achieving efficient compression while ensuring data integrity. This guarantees lossless blackbox recording and delivers exceptionally high-fidelity flight data for playback and analysis.
 
 ---
 
@@ -120,10 +107,7 @@ Records:
 
 ## Motor Protocol
 
-Supports DShot digital motor protocol:
+Exclusively uses **Bidirectional DShot600** digital protocol. With its ultra-short transmission time, commands are delivered to ESCs promptly while motor RPM feedback is retrieved rapidly.
 
-- DShot300
-- DShot600
-
-Digital protocols offer higher precision and lower latency compared to PWM.
+This closed-loop design enables the flight controller to precisely monitor motor operating status, implementing RPM-based dynamic filtering for more accurate suppression of motor harmonic noise—significantly enhancing flight quality.
 

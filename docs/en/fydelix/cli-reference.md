@@ -1,6 +1,9 @@
 # CLI Commands
 
-Fydelix provides a Command Line Interface (CLI) for configuration and debugging.
+!!! warning "Page Incomplete"
+    This page is not yet complete and is for reference only.
+
+Fidelity X provides a Command Line Interface (CLI) for configuration and debugging.
 
 ---
 
