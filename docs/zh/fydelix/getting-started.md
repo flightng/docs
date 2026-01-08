@@ -28,7 +28,7 @@
 
 ### 1. 下载固件
 
-从 [GitHub Releases](https://github.com/flightng/fydelix/releases) 下载对应你飞控板的固件。
+从 [GitHub Releases](https://github.com/flightng/firmware/releases) 下载对应你飞控板的固件。
 
 固件命名格式：`fydelix-<飞控型号>-<版本>-<提交号>.hex`
 

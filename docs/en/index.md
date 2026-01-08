@@ -15,7 +15,7 @@ hide:
 Fidelity X is a next-generation flight controller firmware crafted by the FlightNG team, built on a real-time operating system architecture and designed specifically for acrobatic flight.
 
 [Get Started :material-arrow-right:](fydelix/index.md){ .md-button .md-button--primary }
-[Download Firmware](https://github.com/flightng/fydelix/releases){ .md-button }
+[Download Firmware](https://github.com/flightng/firmware/releases){ .md-button }
 
 </div>
 

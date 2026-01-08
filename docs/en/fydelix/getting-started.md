@@ -28,7 +28,7 @@ This guide will help you get started with Fidelity X firmware quickly.
 
 ### 1. Download Firmware
 
-Download the firmware for your flight controller from [GitHub Releases](https://github.com/flightng/fydelix/releases).
+Download the firmware for your flight controller from [GitHub Releases](https://github.com/flightng/firmware/releases).
 
 Firmware naming format: `fydelix-<board>-<version>-<commit>.hex`
 

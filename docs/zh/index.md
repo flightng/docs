@@ -15,7 +15,7 @@ hide:
 Fidelity X 是 FlightNG 团队精心打造的下一代飞控固件，基于实时操作系统架构，专为空中特技飞行而设计。
 
 [开始使用 :material-arrow-right:](fydelix/index.md){ .md-button .md-button--primary }
-[下载固件](https://github.com/flightng/fydelix/releases){ .md-button }
+[下载固件](https://github.com/flightng/firmware/releases){ .md-button }
 
 </div>
 
