@@ -1,113 +1,123 @@
 # Features
 
-Fidelity X provides rich features for an excellent flight experience.
+<div class="page-intro" markdown>
+
+Every feature, refined to perfection.
+Every detail, in service of better flight.
+
+</div>
 
 ---
 
-## Real-Time Operating System
+## Real-Time Architecture
 
-Fidelity X is built on a mature real-time operating system architecture, providing:
+Not optimization. Redesign.
 
-- **Deterministic scheduling**: Ensures critical tasks execute on time
-- **Multi-task processing**: Gyro sampling, attitude calculation, and motor output run in parallel
-- **Efficient resource management**: Fully utilizes chip performance
+Traditional firmware processes tasks sequentially in a single loop—any delay cascades through the system. Fidelity X employs a real-time operating system where critical tasks truly run in parallel:
+
+- Gyro sampling independent of main loop
+- Attitude computation with dedicated priority
+- Motor output always on time
+
+The result: deterministic response time, regardless of system load.
 
 ---
 
-## Advanced Filtering System
+## Filtering System
 
-Noise is the enemy of flight controller performance. Fidelity X employs a meticulously designed filtering architecture that achieves the optimal balance between noise suppression and system responsiveness.
+Signal processing defines flight quality.
 
 ### Gyro Filtering
 
-Based on deep understanding of consumer-grade MEMS gyroscope characteristics, we have carefully tuned filter parameters to precisely capture attitude changes while effectively suppressing motor vibration, frame resonance, and sensor white noise—providing clean, reliable data for attitude estimation.
+Consumer MEMS gyroscopes aren't perfect—motor vibration, frame resonance, sensor noise all contaminate raw data.
+
+Our filtering system precisely identifies these disturbances while preserving genuine attitude changes. What you feel is the precise response from clean flight data.
 
 ### D-Term Filtering
 
-Purpose-built low phase-shift filter for the PID derivative term, minimizing phase distortion to maintain ultra-high system responsiveness while effectively suppressing motor heating caused by D-term amplification of high-frequency noise.
+The PID derivative is inherently noise-sensitive. We designed a dedicated low phase-shift filter that suppresses high-frequency noise while minimizing phase distortion.
+
+The effect: motors stay cool, response stays sharp.
 
 ---
 
-## Safety Protection System
+## Safety System
 
-Fidelity X has built-in comprehensive safety protection, **always enabled, cannot be disabled**.
+Always running. Cannot be disabled.
 
-### RC Loss Protection
+This isn't an optional feature—it's our design philosophy.
 
-Uses intelligent two-stage protection strategy:
+### Signal Loss Protection
 
-| Stage | Trigger | Default Action |
-|-------|---------|----------------|
-| Stage 1 | Signal loss detected | Stabilize flight attitude |
-| Stage 2 | Stage 1 timeout | Safe disarm |
+Two-stage intelligent response:
 
-### Arming Condition Detection
+| Stage | Trigger | Response |
+|-------|---------|----------|
+| Stage 1 | Signal lost | Attitude stabilization |
+| Stage 2 | Sustained loss | Controlled disarm |
 
-Automatically checks before arming:
+### Arming Checks
 
-- Sensor status normal
-- Throttle at lowest position
+Before takeoff, the system automatically verifies:
+
+- Sensors functioning normally
+- Throttle at minimum
 - RC signal valid
-- No other anomalies
+- System health confirmed
 
-### Battery Monitoring
-
-Real-time battery voltage monitoring with OSD warning display to help you return in time.
+Only when everything checks out is arming permitted.
 
 ---
 
 ## Control System
 
-### Dual-Loop PID Control
+### Dual-Loop PID
 
-- **Outer loop (angle)**: For self-level mode
-- **Inner loop (rate)**: Core controller, responsive
+- **Outer loop**: Angle control for self-level mode
+- **Inner loop**: Angular rate control, the source of responsiveness
 
-### Multiple Rate Curves
+### Rate Curves
 
-Choose based on your flight style:
+Three styles. One choice—yours.
 
-| Rate Curve | Characteristics |
-|------------|-----------------|
-| Betaflight Rate | Compatible with Betaflight, easy migration |
-| Actual Rate | More intuitive, directly set max angular velocity |
-| FlightOne Rate | Compatible with FalcoX, easy migration |
+| Curve | Best For |
+|-------|----------|
+| Betaflight Rate | Pilots migrating from Betaflight |
+| Actual Rate | Pilots who prefer intuitive setup |
+| FlightOne Rate | Pilots migrating from FalcoX |
 
----
-
-## OSD Display
-
-OSD display support via MSP protocol, compatible with mainstream VTX.
-
-Display includes:
-
-- :material-battery: Battery voltage
-- :material-timer: Flight time
-- :material-signal: Signal strength
-- :material-airplane-alert: Flight mode
+Each axis can use a different curve type. Mix and match as you like.
 
 ---
 
-## Blackbox Logging
+## Display & Recording
 
-Supports recording flight data to onboard Flash for post-flight analysis and tuning.
+### OSD
 
-Features a brand-new Flash storage format based on the Gorilla time-series compression algorithm, achieving efficient compression while ensuring data integrity. This guarantees lossless blackbox recording and delivers exceptionally high-fidelity flight data for playback and analysis.
+MSP protocol driven, compatible with popular VTX. What appears on screen is what you need:
+
+:material-battery: Battery voltage　:material-timer: Flight time　:material-signal: Signal strength　:material-airplane-alert: Flight mode
+
+### Blackbox
+
+Flight data, fully preserved.
+
+Using a time-series compression format based on the Gorilla algorithm, more flight time is recorded in limited Flash space. Every frame saved losslessly, ready for deep post-flight analysis.
 
 ---
 
-## RC Protocol Support
+## Protocol Support
 
-| Protocol | Update Rate | Notes |
-|----------|-------------|-------|
-| CRSF | 150-500Hz | Recommended, low latency |
-| SBUS | 100Hz | Wide compatibility |
+### RC Protocols
 
----
+| Protocol | Rate | Notes |
+|----------|------|-------|
+| CRSF | 150-500Hz | Recommended, lowest latency |
+| SBUS | 100Hz | Widely compatible |
 
-## Motor Protocol
+### Motor Protocol
 
-Exclusively uses **Bidirectional DShot600** digital protocol. With its ultra-short transmission time, commands are delivered to ESCs promptly while motor RPM feedback is retrieved rapidly.
+Bidirectional DShot600.
 
-This closed-loop design enables the flight controller to precisely monitor motor operating status, implementing RPM-based dynamic filtering for more accurate suppression of motor harmonic noise—significantly enhancing flight quality.
+Command transmission and RPM feedback both complete in microseconds. Closed-loop design enables dynamic RPM filtering—precisely tracking motor harmonics, eliminating them in real time.
 

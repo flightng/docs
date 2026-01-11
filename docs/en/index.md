@@ -4,74 +4,80 @@ hide:
   - toc
 ---
 
-# Welcome to FlightNG
+<div class="hero-section" markdown>
 
-<div class="hero" markdown>
+# Fidelity X
 
-## :material-rocket-launch: Fidelity X Flight Controller Firmware
+## Flight. Reimagined.
 
-**Next-generation FPV flight controller firmware, built for performance**
+Real-time kernel. Microsecond response. Absolute safety.
 
-Fidelity X is a next-generation flight controller firmware crafted by the FlightNG team, built on a real-time operating system architecture and designed specifically for acrobatic flight.
-
-[Get Started :material-arrow-right:](fydelix/index.md){ .md-button .md-button--primary }
+[Get Started](fydelix/index.md){ .md-button .md-button--primary }
 [Download Firmware](https://github.com/flightng/firmware/releases){ .md-button }
 
 </div>
 
----
+<div class="feature-highlight" markdown>
 
-## Why Choose Fidelity X?
+## Between you and the sky, just a thought away.
 
-<div class="grid cards" markdown>
-
--   :material-chip:{ .lg .middle } **High-Performance Architecture**
-
-    ---
-
-    Built on a real-time operating system with multi-task parallel processing, ensuring precise timing for gyro sampling, attitude calculation, and motor output
-
--   :material-shield-check:{ .lg .middle } **Safe & Reliable**
-
-    ---
-
-    Thanks to RTOS preemptive scheduling, an independent Failsafe thread ensures the aircraft will only perform a controlled landing or disarm, rather than crash unpredictably
-
--   :material-filter:{ .lg .middle } **Advanced Filtering**
-
-    ---
-
-    Based on deep understanding of consumer-grade MEMS gyroscope characteristics, carefully tuned filter parameters deliver a silky-smooth experience with responsive handling
-
--   :material-gauge:{ .lg .middle } **Flexible Tuning**
-
-    ---
-
-    Multiple rate curves that can coexist, PID parameters compatible with Betaflight, easily migrate your familiar tuning settings
+From stick to prop, latency measured in microseconds. Not optimization—reconstruction. Built from scratch on a real-time OS, every control intent translates instantly and precisely into flight.
 
 </div>
 
----
+<div class="snap-section cards-section" markdown>
+
+## Why Fidelity X
+
+<div class="grid cards" markdown>
+
+-   :material-lightning-bolt:{ .lg .middle } **Instant Response**
+
+    ---
+
+    Your intent, delivered instantly. From fingertip to propeller, seamless
+
+-   :material-shield-lock:{ .lg .middle } **Always Protected**
+
+    ---
+
+    Independent safety thread, never sleeps. Safe landing, guaranteed
+
+-   :material-tune-variant:{ .lg .middle } **Silky Control**
+
+    ---
+
+    Precision filtering finds the perfect balance between sharp response and buttery feel
+
+-   :material-atom:{ .lg .middle } **True to Physics**
+
+    ---
+
+    Built on rigid body dynamics. Every response behaves exactly as physics intended
+
+</div>
+
+</div>
+
+<div class="snap-section" markdown>
 
 ## Supported Hardware
 
-Fidelity X supports multiple mainstream flight controllers:
-
-| Flight Controller | MCU | Package |
-|-------------------|-----|---------|
+| Model | MCU | Form Factor |
+|-------|-----|-------------|
 | NeutronRC F435 SE | AT32F435RGT7 | LQFP64 |
 | NeutronRC F435 MINI | AT32F435CGU7 | QFN48 |
 | Hummingbird 200RS | AT32F435 | 20x20mm |
 | Hummingbird 255 V1 | AT32F435 | 25.5x25.5mm |
 | StingerBee | AT32F435 | Whoop |
 
-[View Full Hardware List :material-arrow-right:](fydelix/supported-boards.md)
+[View All Hardware](fydelix/supported-boards.md){ .md-button }
 
----
+</div>
 
-## Other Projects
+<div class="snap-section" markdown>
 
-Besides Fidelity X, the FlightNG team also maintains:
+## More Projects
 
 <div class="grid cards" markdown>
 
@@ -79,16 +85,16 @@ Besides Fidelity X, the FlightNG team also maintains:
 
     ---
 
-    AT32 port of Betaflight, suitable for users familiar with Betaflight
+    AT32 port of Betaflight, crafted for pilots who know Betaflight inside out
 
-    [:octicons-arrow-right-24: Learn More](atbetaflight/index.md)
+    [Learn More](atbetaflight/index.md)
 
 </div>
 
----
+<div class="footer-links" markdown>
 
-## Quick Links
+:fontawesome-brands-github: [GitHub](https://github.com/flightng)  ·  :material-heart: [Sponsor Us](sponsor.md)
 
-- :fontawesome-brands-github: [GitHub](https://github.com/flightng)
-- :material-heart: [Sponsor Us](sponsor.md)
+</div>
 
+</div>

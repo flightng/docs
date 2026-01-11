@@ -1,67 +1,130 @@
-# Fidelity X 固件
+# Fidelity X
 
-[访问 Configurator](https://flightng.github.io/test-configurator){ .md-button .md-button--primary }
+<div class="product-hero" markdown>
+
+## 重新定义飞行体验
+
+[打开调参器](https://flightng.github.io/test-configurator){ .md-button .md-button--primary }
 [下载固件](https://github.com/flightng/firmware/releases){ .md-button }
 
----
-
-## 简介
-
-Fidelity X 是 FlightNG 团队精心打造的下一代飞控固件，基于实时操作系统架构，专为空中特技飞行而设计。
-
-无论你是自由式飞手还是竞速选手，Fidelity X 都能为你提供流畅、精准的飞行体验。
+</div>
 
 ---
 
-## 核心特性
+<div class="intro-statement" markdown>
 
-### :material-chip: 高性能架构
+Fidelity X 不只是一款飞控固件
 
-基于实时操作系统构建，多任务并行处理，确保陀螺仪采样、姿态计算和电机输出的精确时序。
+它是对"飞行应该是什么感觉"这个问题的全新回答——不是优化，是从零构建。每一行代码都服务于同一个目标：让你与飞行器之间的连接，前所未有地紧密
 
-### :material-shield-check: 可靠的安全保障
-
-得益于 RTOS 的抢占式调度，所有任务都能得到及时响应，不存在任务被饿死的情况。独立的 Failsafe 线程确保即便出现意外，飞机也只会受控降落或停机，而不会以不可预期的方式坠毁。
-
-### :material-filter: 先进滤波系统
-
-基于对消费级 MEMS 陀螺仪特性的深入理解，我们精心调教了滤波器参数，有效抑制各种噪声的同时提供最佳性能，为你带来丝滑体验与灵敏响应。
-
-### :material-gauge: 灵活的调参选项
-
-- **多种速率曲线**：支持 FlightOne、Betaflight、Actual 三种曲线，且支持共存——Yaw、Pitch、Roll 可同时使用不同曲线，互不影响
-- **PID 参数兼容 Betaflight**：轻松迁移你熟悉的调参设置
-- **一体化调参体验**：与黑盒分析深度结合，让调参更高效
-
-### :material-monitor-dashboard: 完善的功能支持
-
-- **MSP-OSD**：标准 OSD 显示支持
-- **Blackbox**：完整的飞行日志记录
-- **遥控协议**：支持 CRSF、SBUS
-- **电机协议**：支持双向 DShot600
-- **无源蜂鸣器**：内置 BB 响支持
+</div>
 
 ---
 
-## 支持的传感器
+## 性能，源于架构
 
-| 传感器 | 类型 | 状态 |
-|--------|------|------|
-| BMI270 | 陀螺仪/加速度计 | ✅ 支持 |
-| ICM-42688-P | 陀螺仪/加速度计 | ⚠️ 有限支持，不推荐用于新设计 |
-| QMI8658C | 陀螺仪/加速度计 | ✅ 支持 |
+<div class="grid cards" markdown>
+
+-   :material-lightning-bolt:{ .lg .middle } **即时响应**
+
+    ---
+
+    并行架构，独立任务——从指尖到桨叶，微秒级传达，一气呵成
+
+-   :material-source-branch:{ .lg .middle } **从零构建**
+
+    ---
+
+    每一行代码，都为飞行而生——没有移植，没有妥协，只有纯粹
+
+-   :material-shield-check:{ .lg .middle } **渐进守护**
+
+    ---
+
+    多级安全机制，从信号恢复到安全着陆，每一级都有预案
+
+-   :material-tune-variant:{ .lg .middle } **精调滤波**
+
+    ---
+
+    精心调校的信号处理链路，让锐利响应与丝滑手感不再是取舍题
+
+</div>
+
+---
+
+## 体验，源于细节
+
+<div class="grid cards" markdown>
+
+-   :material-atom:{ .lg .middle } **物理建模**
+
+    ---
+
+    基于刚体动力学，飞行器的每一个响应都符合它本该有的样子
+
+-   :material-compass-outline:{ .lg .middle } **一键校准**
+
+    ---
+
+    传感器自校准，静置片刻即可完成——复杂的事情，交给固件来做
+
+-   :material-palette-outline:{ .lg .middle } **直观配置**
+
+    ---
+
+    简洁的界面，清晰的逻辑——看一眼就懂，上手即会
+
+-   :material-record-circle-outline:{ .lg .middle } **无损记录**
+
+    ---
+
+    全新研发的无损黑盒日志，你的每一个动作都被精准记录、完整还原
+
+</div>
+
+---
+
+## 为你的风格而生
+
+**三种速率曲线**，可以混合使用：
+
+- Betaflight Rate — 熟悉的手感，无缝迁移
+- Actual Rate — 直观设置，所见即所得
+- FlightOne Rate — FalcoX 用户的自然选择
+
+Yaw、Pitch、Roll 可以分别使用不同曲线。你的飞行风格，由你定义。
+
+---
+
+## 完整生态
+
+| 能力 | 支持 |
+|------|------|
+| OSD 显示 | MSP 协议，兼容主流图传 |
+| 飞行记录 | 板载 Blackbox，支持深度分析 |
+| 遥控协议 | CRSF · SBUS |
+| 电机协议 | 双向 DShot600 |
+
+---
+
+## 兼容传感器
+
+| 传感器 | 状态 |
+|--------|------|
+| BMI270 | ✓ 完整支持 |
+| QMI8658C | ✓ 完整支持 |
+| ICM-42688-P | 有限支持 |
 
 ---
 
 ## 当前版本
 
-**v0.1.3**
-
-查看 [更新日志](https://github.com/flightng/firmware/releases) 了解最新更新。
+**v0.1.3**　[查看更新日志](https://github.com/flightng/firmware/releases)
 
 ---
 
-## 下一步
+## 开始你的旅程
 
 <div class="grid cards" markdown>
 
@@ -69,25 +132,24 @@ Fidelity X 是 FlightNG 团队精心打造的下一代飞控固件，基于实�
 
     ---
 
-    从下载到首飞的完整指南
+    从下载到首飞，只需几步
 
-    [:octicons-arrow-right-24: 开始](getting-started.md)
+    [开始](getting-started.md)
 
 -   :material-cog:{ .lg .middle } **配置指南**
 
     ---
 
-    调整参数，优化飞行体验
+    释放 Fidelity X 的全部潜能
 
-    [:octicons-arrow-right-24: 配置](configuration/index.md)
+    [配置](configuration/index.md)
 
 -   :material-chip:{ .lg .middle } **支持的硬件**
 
     ---
 
-    查看兼容的飞控板列表
+    找到适合你的飞控
 
-    [:octicons-arrow-right-24: 硬件](supported-boards.md)
+    [查看硬件](supported-boards.md)
 
 </div>
-

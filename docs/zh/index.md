@@ -4,74 +4,114 @@ hide:
   - toc
 ---
 
-# 欢迎使用 FlightNG
+<div class="hero-section" markdown>
 
-<div class="hero" markdown>
+# Fidelity X
 
-## :material-rocket-launch: Fidelity X 飞控固件
+## 飞行，重新想象
 
-**下一代穿越机飞控固件，专为性能而生**
+实时内核 · 精调滤波 · 渐进守护
 
-Fidelity X 是 FlightNG 团队精心打造的下一代飞控固件，基于实时操作系统架构，专为空中特技飞行而设计。
-
-[开始使用 :material-arrow-right:](fydelix/index.md){ .md-button .md-button--primary }
+[开始体验](fydelix/index.md){ .md-button .md-button--primary }
 [下载固件](https://github.com/flightng/firmware/releases){ .md-button }
 
 </div>
 
----
+<div class="feature-highlight" markdown>
 
-## 为什么选择 Fidelity X？
+## 你与天空之间，只差一个念头的距离
 
-<div class="grid cards" markdown>
-
--   :material-chip:{ .lg .middle } **高性能架构**
-
-    ---
-
-    基于实时操作系统构建，多任务并行处理，确保陀螺仪采样、姿态计算和电机输出的精确时序
-
--   :material-shield-check:{ .lg .middle } **安全可靠**
-
-    ---
-
-    得益于 RTOS 抢占式调度，独立的 Failsafe 线程确保飞机只会受控降落或停机，而不会以不可预期的方式坠毁
-
--   :material-filter:{ .lg .middle } **先进滤波**
-
-    ---
-
-    基于对消费级 MEMS 陀螺仪特性的深入理解，精心调教的滤波器参数带来丝滑体验与灵敏响应
-
--   :material-gauge:{ .lg .middle } **灵活调参**
-
-    ---
-
-    多种速率曲线支持共存，PID 参数兼容 Betaflight，轻松迁移你熟悉的调参设置
+不是优化，是从零构建——基于实时操作系统从零打造，精心调校的信号链路确保锐利响应与丝滑手感并存，渐进式安全机制让每一次降落都在掌控之中。从摇杆到桨叶，每一个操控意图都被即时、精准地转化为飞行
 
 </div>
 
----
+<div class="snap-section cards-section" markdown>
 
-## 支持的硬件
+## 核心优势
 
-Fidelity X 支持多款主流飞控板：
+<div class="grid cards" markdown>
 
-| 飞控板 | MCU | 封装 |
-|--------|-----|------|
+-   :material-lightning-bolt:{ .lg .middle } **即时响应**
+
+    ---
+
+    并行架构，独立任务——从指尖到桨叶，微秒级传达，一气呵成
+
+-   :material-source-branch:{ .lg .middle } **从零构建**
+
+    ---
+
+    每一行代码，都为飞行而生——没有移植，没有妥协，只有纯粹
+
+-   :material-shield-lock:{ .lg .middle } **渐进守护**
+
+    ---
+
+    多级安全机制，从信号恢复到安全着陆，每一级都有预案
+
+-   :material-tune-variant:{ .lg .middle } **精调滤波**
+
+    ---
+
+    精心调校的信号处理链路，让锐利响应与丝滑手感不再是取舍题
+
+</div>
+
+</div>
+
+<div class="snap-section cards-section" markdown>
+
+## 专业能力
+
+<div class="grid cards" markdown>
+
+-   :material-atom:{ .lg .middle } **物理建模**
+
+    ---
+
+    基于刚体动力学，飞行器的每一个响应都符合它本该有的样子
+
+-   :material-compass-outline:{ .lg .middle } **一键校准**
+
+    ---
+
+    传感器自校准，静置片刻即可完成——复杂的事情，交给固件来做
+
+-   :material-palette-outline:{ .lg .middle } **直观配置**
+
+    ---
+
+    简洁的界面，清晰的逻辑——看一眼就懂，上手即会
+
+-   :material-record-circle-outline:{ .lg .middle } **无损记录**
+
+    ---
+
+    全新研发的无损黑盒日志，你的每一个动作都被精准记录、完整还原
+
+</div>
+
+</div>
+
+<div class="snap-section" markdown>
+
+## 支持的飞控
+
+| 型号 | 芯片 | 尺寸 |
+|------|------|------|
 | NeutronRC F435 SE | AT32F435RGT7 | LQFP64 |
 | NeutronRC F435 MINI | AT32F435CGU7 | QFN48 |
 | Hummingbird 200RS | AT32F435 | 20x20mm |
 | Hummingbird 255 V1 | AT32F435 | 25.5x25.5mm |
 | StingerBee | AT32F435 | Whoop |
 
-[查看完整硬件列表 :material-arrow-right:](fydelix/supported-boards.md)
+[查看全部硬件](fydelix/supported-boards.md){ .md-button }
 
----
+</div>
 
-## 其他项目
+<div class="snap-section" markdown>
 
-除了 Fidelity X，FlightNG 团队还维护以下开源项目：
+## 更多项目
 
 <div class="grid cards" markdown>
 
@@ -79,16 +119,16 @@ Fidelity X 支持多款主流飞控板：
 
     ---
 
-    Betaflight 的 AT32 移植版本，适合熟悉 Betaflight 的用户
+    Betaflight 的 AT32 移植版，为熟悉 Betaflight 的飞手打造
 
-    [:octicons-arrow-right-24: 了解更多](atbetaflight/index.md)
+    [了解更多](atbetaflight/index.md)
 
 </div>
 
----
+<div class="footer-links" markdown>
 
-## 快速链接
+:fontawesome-brands-github: [GitHub](https://github.com/flightng)  ·  :material-heart: [赞助我们](sponsor.md)
 
-- :fontawesome-brands-github: [GitHub](https://github.com/flightng)
-- :material-heart: [赞助我们](sponsor.md)
+</div>
 
+</div>
