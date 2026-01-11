@@ -1,67 +1,98 @@
-# Fidelity X Firmware
+# Fidelity X
+
+<div class="product-hero" markdown>
+
+## Flight, Redefined.
 
 [Open Configurator](https://flightng.github.io/test-configurator){ .md-button .md-button--primary }
 [Download Firmware](https://github.com/flightng/firmware/releases){ .md-button }
 
----
-
-## Introduction
-
-Fidelity X is a next-generation flight controller firmware crafted by the FlightNG team, built on a real-time operating system architecture and designed specifically for acrobatic flight.
-
-Whether you're a freestyle pilot or a racer, Fidelity X delivers a smooth and precise flight experience.
+</div>
 
 ---
 
-## Key Features
+<div class="intro-statement" markdown>
 
-### :material-chip: High-Performance Architecture
+Fidelity X is more than firmware.
 
-Built on a real-time operating system with multi-task parallel processing, ensuring precise timing for gyro sampling, attitude calculation, and motor output.
+It's a new answer to the question: what should flight feel like? Built from the ground up on a real-time operating system, every line of code serves a single purpose—to create the most intimate connection between you and your aircraft.
 
-### :material-shield-check: Reliable Safety Assurance
-
-Thanks to RTOS preemptive scheduling, all tasks receive timely responses without starvation. An independent Failsafe thread ensures that even in unexpected situations, the aircraft will only perform a controlled landing or disarm, rather than crash in unpredictable ways.
-
-### :material-filter: Advanced Filtering System
-
-Based on a deep understanding of consumer-grade MEMS gyroscope characteristics, we have carefully tuned the filter parameters to effectively suppress various noise while providing optimal performance, delivering a silky-smooth experience with responsive handling.
-
-### :material-gauge: Flexible Tuning Options
-
-- **Multiple rate curves**: Supports FlightOne, Betaflight, and Actual — three curve types that can coexist, allowing Yaw, Pitch, and Roll to use different curves simultaneously
-- **PID parameters compatible with Betaflight**: Easily migrate your familiar tuning settings
-- **Integrated tuning experience**: Deep integration with blackbox analysis for more efficient tuning
-
-### :material-monitor-dashboard: Complete Feature Support
-
-- **MSP-OSD**: Standard OSD display support
-- **Blackbox**: Full flight logging
-- **RC protocols**: CRSF, SBUS support
-- **Motor protocol**: Bidirectional DShot600 support
-- **Passive buzzer**: Built-in beeper support
+</div>
 
 ---
 
-## Supported Sensors
+## Performance by Design
 
-| Sensor | Type | Status |
-|--------|------|--------|
-| BMI270 | Gyro/Accelerometer | ✅ Supported |
-| ICM-42688-P | Gyro/Accelerometer | ⚠️ Limited support, not recommended for new designs |
-| QMI8658C | Gyro/Accelerometer | ✅ Supported |
+<div class="grid cards" markdown>
+
+-   :material-timer-sand:{ .lg .middle } **Real-Time Kernel**
+
+    ---
+
+    Beyond the single loop. Gyro sampling, attitude computation, and motor output run in parallel with microsecond precision. Every input becomes instant response
+
+-   :material-blur:{ .lg .middle } **Intelligent Filtering**
+
+    ---
+
+    Precisely distinguishes real motion from noise. Razor-sharp response meets buttery-smooth feel
+
+-   :material-shield-check:{ .lg .middle } **Safety Guardian**
+
+    ---
+
+    Independent safety thread, always running, cannot be disabled. Your aircraft will only perform controlled descent—never an unpredictable crash
+
+-   :material-atom:{ .lg .middle } **True to Physics**
+
+    ---
+
+    Built on rigid body dynamics. Every response behaves exactly as physics intended
+
+</div>
+
+---
+
+## Fly Your Way
+
+**Three rate curves**, fully mixable:
+
+- Betaflight Rate — The feel you know, zero adjustment needed
+- Actual Rate — Intuitive setup, what you set is what you get
+- FlightOne Rate — Natural choice for FalcoX pilots
+
+Yaw, Pitch, and Roll can each use different curves. Your flight style, your rules.
+
+---
+
+## Complete Ecosystem
+
+| Capability | Support |
+|------------|---------|
+| OSD Display | MSP protocol, works with popular VTX |
+| Flight Recording | Onboard Blackbox with deep analysis |
+| RC Protocols | CRSF · SBUS |
+| Motor Protocol | Bidirectional DShot600 |
+
+---
+
+## Compatible Sensors
+
+| Sensor | Status |
+|--------|--------|
+| BMI270 | ✓ Full Support |
+| QMI8658C | ✓ Full Support |
+| ICM-42688-P | Limited Support |
 
 ---
 
 ## Current Version
 
-**v0.1.3**
-
-Check the [Changelog](https://github.com/flightng/firmware/releases) for latest updates.
+**v0.1.3**　[View Changelog](https://github.com/flightng/firmware/releases)
 
 ---
 
-## Next Steps
+## Begin Your Journey
 
 <div class="grid cards" markdown>
 
@@ -69,25 +100,25 @@ Check the [Changelog](https://github.com/flightng/firmware/releases) for latest 
 
     ---
 
-    Complete guide from download to first flight
+    From download to first flight, in just a few steps
 
-    [:octicons-arrow-right-24: Start](getting-started.md)
+    [Start](getting-started.md)
 
 -   :material-cog:{ .lg .middle } **Configuration**
 
     ---
 
-    Adjust parameters to optimize flight experience
+    Unlock the full potential of Fidelity X
 
-    [:octicons-arrow-right-24: Configure](configuration/index.md)
+    [Configure](configuration/index.md)
 
 -   :material-chip:{ .lg .middle } **Supported Hardware**
 
     ---
 
-    View compatible flight controller list
+    Find the right flight controller for you
 
-    [:octicons-arrow-right-24: Hardware](supported-boards.md)
+    [View Hardware](supported-boards.md)
 
 </div>
 

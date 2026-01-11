@@ -1,3 +1,314 @@
 .lightbox-caption-class {
 	opacity: 0.8;
 }
+
+/* ===== Apple-inspired Design System ===== */
+
+/* Hero Section - Centered, impactful */
+.hero-section {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #1d1d1f 0%, #424245 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-md-color-scheme="slate"] .hero-section h1 {
+    background: linear-gradient(135deg, #f5f5f7 0%, #a1a1a6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-section h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #86868b;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    color: #1d1d1f;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+[data-md-color-scheme="slate"] .hero-section p {
+    color: #f5f5f7;
+}
+
+/* Product Hero - For product pages */
+.product-hero {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.product-hero h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1.5rem;
+}
+
+[data-md-color-scheme="slate"] .product-hero h2 {
+    color: #f5f5f7;
+}
+
+/* Feature Highlight - Centered emphasis text */
+.feature-highlight {
+    text-align: center;
+    padding: 2rem 1rem;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.feature-highlight h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.feature-highlight p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #424245;
+}
+
+[data-md-color-scheme="slate"] .feature-highlight p {
+    color: #a1a1a6;
+}
+
+/* Intro Statement - Elegant lead-in paragraph */
+.intro-statement {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.intro-statement p {
+    font-size: 1.125rem;
+    line-height: 1.9;
+    color: #6e6e73;
+    font-weight: 400;
+}
+
+.intro-statement p:first-child {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #1d1d1f;
+    margin-bottom: 0.75rem;
+}
+
+[data-md-color-scheme="slate"] .intro-statement p {
+    color: #a1a1a6;
+}
+
+[data-md-color-scheme="slate"] .intro-statement p:first-child {
+    color: #f5f5f7;
+}
+
+/* Page Intro - Centered opening statement */
+.page-intro {
+    text-align: center;
+    padding: 2rem 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.page-intro p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #424245;
+    font-weight: 400;
+}
+
+[data-md-color-scheme="slate"] .page-intro p {
+    color: #a1a1a6;
+}
+
+/* Feature Section - Structured content */
+.feature-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature-section p {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: #424245;
+}
+
+[data-md-color-scheme="slate"] .feature-section p {
+    color: #a1a1a6;
+}
+
+/* Footer Links - Centered minimal footer */
+.footer-links {
+    text-align: center;
+    padding: 1rem;
+    color: #86868b;
+}
+
+/* Enhanced Grid Cards */
+.grid.cards > ul > li {
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid.cards > ul > li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+[data-md-color-scheme="slate"] .grid.cards > ul > li:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Refined Tables */
+.md-typeset table:not([class]) {
+    font-size: 0.9rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+    background: #f5f5f7;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+    background: #2d2d2d;
+}
+
+/* Buttons - More refined */
+.md-button {
+    border-radius: 980px;
+    padding: 0.75em 1.5em;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: all 0.2s ease;
+}
+
+.md-button--primary {
+    background: #0071e3;
+    border-color: #0071e3;
+}
+
+.md-button--primary:hover {
+    background: #0077ed;
+    border-color: #0077ed;
+    transform: scale(1.02);
+}
+
+.md-button:not(.md-button--primary):hover {
+    border-color: #0071e3;
+    color: #0071e3;
+}
+
+/* ===== Fullpage Scroll Sections (Apple-style) ===== */
+
+/* Hero section - full viewport */
+.hero-section {
+    min-height: calc(100vh - 8rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+/* Scroll hint arrow */
+.hero-section::after {
+    content: "";
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid #86868b;
+    border-bottom: 2px solid #86868b;
+    transform: translateX(-50%) rotate(45deg);
+    animation: scrollHint 2s ease-in-out infinite;
+    opacity: 0.4;
+}
+
+@keyframes scrollHint {
+    0%, 100% { transform: translateX(-50%) rotate(45deg) translateY(0); opacity: 0.4; }
+    50% { transform: translateX(-50%) rotate(45deg) translateY(6px); opacity: 0.7; }
+}
+
+/* Feature highlight section - full viewport */
+.feature-highlight {
+    min-height: calc(100vh - 8rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+/* Snap sections - full viewport */
+.snap-section {
+    min-height: calc(100vh - 8rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+.snap-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Cards section specific */
+.snap-section.cards-section .grid.cards {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Force 2-column grid layout for cards sections */
+.snap-section.cards-section .grid.cards > ul {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .snap-section.cards-section .grid.cards > ul {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Mobile: disable fullpage, normal scroll */
+@media (max-width: 768px) {
+    .hero-section,
+    .feature-highlight,
+    .snap-section {
+        min-height: auto;
+        padding: 3rem 1rem;
+    }
+    
+    .hero-section::after {
+        display: none;
+    }
+}
