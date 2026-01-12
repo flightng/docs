@@ -15,7 +15,7 @@
 
 Fidelity X is more than just flight controller firmware.
 
-It's a new answer to the question: "What should flight feel like?"—not optimization, but built from scratch. Every line of code serves a single purpose: to create the most intimate connection between you and your aircraft, like never before.
+It's a new answer to the question: "What should flight feel like?"—not optimization, but built from scratch. Every line of code serves a single purpose: to create an unprecedented intimate connection between you and your aircraft.
 
 </div>
 
@@ -29,7 +29,7 @@ It's a new answer to the question: "What should flight feel like?"—not optimiz
 
     ---
 
-    Parallel architecture, independent tasks—from fingertip to propeller, microsecond delivery, all in one breath
+    Parallel architecture, independent tasks—from fingertip to propeller, microsecond delivery, seamlessly
 
 -   :material-source-branch:{ .lg .middle } **Built from Scratch**
 

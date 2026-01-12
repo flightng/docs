@@ -21,7 +21,7 @@ Real-time kernel · Precision filtering · Progressive protection
 
 ## Between you and the sky, just a thought away
 
-Not optimization—reconstruction from scratch. Built from the ground up on a real-time OS, carefully tuned signal chain ensures sharp response and silky feel coexist. Progressive safety mechanisms keep every landing under control. From stick to prop, every control intent translates instantly and precisely into flight.
+Not optimization—reconstruction from scratch. Built from the ground up on a real-time OS, a carefully tuned signal chain ensures that sharp response and silky feel coexist. Progressive safety mechanisms keep every landing under control. From stick to prop, every control intent translates instantly and precisely into flight.
 
 </div>
 
@@ -35,7 +35,7 @@ Not optimization—reconstruction from scratch. Built from the ground up on a re
 
     ---
 
-    Parallel architecture, independent tasks—from fingertip to propeller, microsecond delivery, all in one breath
+    Parallel architecture, independent tasks—from fingertip to propeller, microsecond delivery, seamlessly
 
 -   :material-source-branch:{ .lg .middle } **Built from Scratch**
 
