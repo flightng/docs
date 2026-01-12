@@ -10,7 +10,7 @@ hide:
 
 ## Flight. Reimagined.
 
-Real-time kernel. Microsecond response. Absolute safety.
+Real-time kernel · Precision filtering · Progressive protection
 
 [Get Started](fydelix/index.md){ .md-button .md-button--primary }
 [Download Firmware](https://github.com/flightng/firmware/releases){ .md-button }
@@ -19,15 +19,15 @@ Real-time kernel. Microsecond response. Absolute safety.
 
 <div class="feature-highlight" markdown>
 
-## Between you and the sky, just a thought away.
+## Between you and the sky, just a thought away
 
-From stick to prop, latency measured in microseconds. Not optimization—reconstruction. Built from scratch on a real-time OS, every control intent translates instantly and precisely into flight.
+Not optimization—reconstruction from scratch. Built from the ground up on a real-time OS, a carefully tuned signal chain ensures that sharp response and silky feel coexist. Progressive safety mechanisms keep every landing under control. From stick to prop, every control intent translates instantly and precisely into flight.
 
 </div>
 
 <div class="snap-section cards-section" markdown>
 
-## Why Fidelity X
+## Core Advantages
 
 <div class="grid cards" markdown>
 
@@ -35,25 +35,59 @@ From stick to prop, latency measured in microseconds. Not optimization—reconst
 
     ---
 
-    Your intent, delivered instantly. From fingertip to propeller, seamless
+    Parallel architecture, independent tasks—from fingertip to propeller, microsecond delivery, seamlessly
 
--   :material-shield-lock:{ .lg .middle } **Always Protected**
-
-    ---
-
-    Independent safety thread, never sleeps. Safe landing, guaranteed
-
--   :material-tune-variant:{ .lg .middle } **Silky Control**
+-   :material-source-branch:{ .lg .middle } **Built from Scratch**
 
     ---
 
-    Precision filtering finds the perfect balance between sharp response and buttery feel
+    Every line of code, born for flight—no porting, no compromise, only purity
 
--   :material-atom:{ .lg .middle } **True to Physics**
+-   :material-shield-lock:{ .lg .middle } **Progressive Protection**
 
     ---
 
-    Built on rigid body dynamics. Every response behaves exactly as physics intended
+    Multi-stage safety mechanisms, from signal recovery to safe landing, every stage has a plan
+
+-   :material-tune-variant:{ .lg .middle } **Precision Filtering**
+
+    ---
+
+    Carefully tuned signal processing chain, where sharp response and silky feel are no longer a trade-off
+
+</div>
+
+</div>
+
+<div class="snap-section cards-section" markdown>
+
+## Professional Capabilities
+
+<div class="grid cards" markdown>
+
+-   :material-atom:{ .lg .middle } **Physics Modeling**
+
+    ---
+
+    Based on rigid body dynamics, every response of the aircraft behaves exactly as it should
+
+-   :material-compass-outline:{ .lg .middle } **One-Click Calibration**
+
+    ---
+
+    Sensor self-calibration, just rest for a moment—let the firmware handle the complex tasks
+
+-   :material-palette-outline:{ .lg .middle } **Intuitive Configuration**
+
+    ---
+
+    Clean interface, clear logic—understand at a glance, master immediately
+
+-   :material-record-circle-outline:{ .lg .middle } **Lossless Recording**
+
+    ---
+
+    Newly developed lossless blackbox logging, your every action precisely recorded and fully restored
 
 </div>
 

@@ -28,7 +28,7 @@ Choose firmware based on your flight controller:
 
 | MCU | FC | Firmware |
 |-----|-----|----------|
-| AT32F435VMT7 | EMSRPROTO2 | betaflight-xxx-EMSRPROTO2 |
+| AT32F435VMT7 | EMSRPROTO2 / Chongshan 1.2 | betaflight-xxx-EMSRPROTO2 |
 | AT32F437VGT7 | EMSRPROTO3 | betaflight-xxx-EMSRPROTO3 |
 | AT32F435RGT7 | NEUTRONRCF435SE | betaflight-xxx-NEUTRONRCF435SE |
 | AT32F435CGU7 | NEUTRONRCF435MINI | betaflight-xxx-NEUTRONRCF435MINI |
