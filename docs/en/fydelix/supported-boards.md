@@ -114,6 +114,7 @@ Some boards have firmware with `_legacy` suffix for compatibility with older har
 ### NeutronRC
 
 - Official: [NeutronRC](https://www.neutronrc.com)
+- Taobao: Search "NeutronRC F435"
 
 ---
 
