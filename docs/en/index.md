@@ -75,7 +75,7 @@ Not optimization—reconstruction from scratch. Built from the ground up on a re
 
     ---
 
-    Sensor self-calibration, just rest for a moment—complex tasks, left to the firmware
+    Sensor self-calibration, just rest for a moment—let the firmware handle the complex tasks
 
 -   :material-palette-outline:{ .lg .middle } **Intuitive Configuration**
 

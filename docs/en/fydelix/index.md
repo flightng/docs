@@ -67,7 +67,7 @@ It's a new answer to the question: "What should flight feel like?"—not optimiz
 
     ---
 
-    Sensor self-calibration, just rest for a moment—complex tasks, left to the firmware
+    Sensor self-calibration, just rest for a moment—let the firmware handle the complex tasks
 
 -   :material-palette-outline:{ .lg .middle } **Intuitive Configuration**
 
