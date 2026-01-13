@@ -1,0 +1,79 @@
+---
+title: 配置指南
+description: Fidelity X 固件配置概览
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+:::caution[页面未完成]
+本页面内容尚未完成，仅供参考。
+:::
+
+本章节介绍如何配置 Fidelity X 固件。
+
+---
+
+## 参数系统
+
+Fidelity X 使用参数系统进行配置。所有配置都通过 CLI 命令完成。
+
+### 基本操作
+
+| 命令 | 功能 |
+|------|------|
+| `param list` | 列出所有参数 |
+| `param get <名称>` | 获取参数值 |
+| `param set <名称> <值>` | 设置参数 |
+| `param save` | 保存到 Flash |
+| `param load` | 从 Flash 加载 |
+| `param reset` | 重置为默认值 |
+
+:::note[保存参数]
+修改参数后必须执行 `param save` 才能永久保存！
+:::
+
+---
+
+## 配置分类
+
+<CardGrid>
+  <LinkCard title="🎛️ PID 调参" description="调整飞行响应和手感" href="/zh/fydelix/configuration/pid-tuning/" />
+  <LinkCard title="📈 速率曲线" description="调整操控灵敏度" href="/zh/fydelix/configuration/rate-profiles/" />
+  <LinkCard title="🛡️ 安全系统" description="配置 Failsafe 保护" href="/zh/fydelix/configuration/failsafe/" />
+</CardGrid>
+
+---
+
+## 快速配置示例
+
+### 5 寸自由式
+
+```bash
+param set PID_ROLL_P 45
+param set PID_ROLL_I 80
+param set PID_ROLL_D 35
+param set GYRO_LPF_CUTOFF 100
+param save
+```
+
+### Tiny Whoop
+
+```bash
+param set PID_ROLL_P 35
+param set PID_ROLL_D 25
+param set GYRO_LPF_CUTOFF 80
+param save
+```
+
+---
+
+## 恢复默认设置
+
+```bash
+param reset
+param save
+```
+
+:::danger[警告]
+这将清除所有自定义配置！
+:::

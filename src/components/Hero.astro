@@ -1,0 +1,81 @@
+---
+/**
+ * Custom Hero component for FlightNG landing page
+ * Apple-inspired design with mobile-first approach
+ */
+
+// Get current locale from URL
+const pathname = Astro.url.pathname;
+const isZh = pathname.startsWith('/zh/') || pathname.includes('/zh/');
+
+// Localized content
+const content = {
+  zh: {
+    title: 'Fidelity X',
+    tagline: '飞行，重新想象',
+    description: '实时内核 · 精调滤波 · 渐进守护',
+    features: [
+      { icon: '⚡', title: '即时响应', desc: '并行架构，独立任务——从指尖到桨叶，微秒级传达' },
+      { icon: '🔧', title: '从零构建', desc: '每一行代码，都为飞行而生——没有移植，只有纯粹' },
+      { icon: '🛡️', title: '渐进守护', desc: '多级安全机制，从信号恢复到安全着陆，每一级都有预案' },
+      { icon: '🎯', title: '精调滤波', desc: '精心调校的信号链路，让锐利响应与丝滑手感不再是取舍题' },
+    ],
+    cta: '开始体验',
+    ctaSecondary: '下载固件',
+  },
+  en: {
+    title: 'Fidelity X',
+    tagline: 'Flight, Reimagined',
+    description: 'Real-time Kernel · Precision Filtering · Progressive Protection',
+    features: [
+      { icon: '⚡', title: 'Instant Response', desc: 'Parallel architecture—from fingertip to propeller, microsecond delivery' },
+      { icon: '🔧', title: 'Built from Scratch', desc: 'Every line of code born for flight—no porting, only purity' },
+      { icon: '🛡️', title: 'Progressive Protection', desc: 'Multi-stage safety from signal recovery to safe landing' },
+      { icon: '🎯', title: 'Precision Filtering', desc: 'Sharp response and silky feel are no longer a trade-off' },
+    ],
+    cta: 'Get Started',
+    ctaSecondary: 'Download Firmware',
+  },
+};
+
+const t = isZh ? content.zh : content.en;
+---
+
+<div class="hero-landing">
+  <div class="hero-content">
+    <h1 class="hero-title">{t.title}</h1>
+    <p class="hero-tagline">{t.tagline}</p>
+    <p class="hero-description">{t.description}</p>
+    
+    <div class="hero-buttons">
+      <a href={isZh ? '/zh/fydelix/' : '/en/fydelix/'} class="hero-btn hero-btn-primary">
+        {t.cta}
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <a href="https://github.com/flightng/firmware/releases" class="hero-btn hero-btn-secondary" target="_blank" rel="noopener">
+        {t.ctaSecondary}
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+      </a>
+    </div>
+    
+    <div class="feature-grid">
+      {t.features.map((feature) => (
+        <div class="feature-card">
+          <div class="feature-icon">{feature.icon}</div>
+          <h3 class="feature-title">{feature.title}</h3>
+          <p class="feature-desc">{feature.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+  
+  <div class="scroll-indicator" aria-hidden="true"></div>
+</div>
+
+<style>
+  /* Component-specific styles are in custom.css */
+</style>

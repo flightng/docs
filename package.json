@@ -1,0 +1,22 @@
+{
+  "name": "flightng-docs",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "FlightNG Documentation - Next-generation flight controller firmware",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.32.0",
+    "astro": "^5.1.0",
+    "sharp": "^0.33.0"
+  },
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.2.0",
+    "@iconify-json/simple-icons": "^1.2.0"
+  }
+}

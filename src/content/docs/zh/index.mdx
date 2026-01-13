@@ -1,0 +1,64 @@
+---
+title: FlightNG
+description: 下一代飞控固件
+template: splash
+hero:
+  title: Fidelity X
+  tagline: 飞行，重新想象
+  actions:
+    - text: 开始体验
+      link: /zh/fydelix/
+      icon: right-arrow
+      variant: primary
+    - text: 下载固件
+      link: https://github.com/flightng/firmware/releases
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<div class="section-highlight">
+  <h2>你与天空之间，只差一个念头的距离</h2>
+  <p>
+    不是优化，是从零构建——基于实时操作系统从零打造，精心调校的信号链路确保锐利响应与丝滑手感并存，渐进式安全机制让每一次降落都在掌控之中。
+  </p>
+</div>
+
+<CardGrid>
+  <Card title="即时响应" icon="rocket">
+    并行架构，独立任务——从指尖到桨叶，微秒级传达，一气呵成
+  </Card>
+  <Card title="从零构建" icon="setting">
+    每一行代码，都为飞行而生——没有移植，没有妥协，只有纯粹
+  </Card>
+  <Card title="渐进守护" icon="approve-check">
+    多级安全机制，从信号恢复到安全着陆，每一级都有预案
+  </Card>
+  <Card title="精调滤波" icon="bars">
+    精心调校的信号处理链路，让锐利响应与丝滑手感不再是取舍题
+  </Card>
+</CardGrid>
+
+<div class="section-highlight">
+  <h2>支持的飞控</h2>
+</div>
+
+| 型号 | 芯片 | 尺寸 |
+|------|------|------|
+| NeutronRC F435 SE | AT32F435RGT7 | 30.5x30.5mm |
+| NeutronRC F435 MINI | AT32F435CGU7 | 20x20mm |
+| Hummingbird 200RS | AT32F435 | 20x20mm |
+| Hummingbird 255 V1 | AT32F435 | 25.5x25.5mm |
+| StingerBee | AT32F435 | Whoop |
+
+<div class="section-highlight">
+  <h2>更多项目</h2>
+</div>
+
+<CardGrid>
+  <Card title="atbetaflight" icon="seti:code">
+    Betaflight 的 AT32 移植版，为熟悉 Betaflight 的飞手打造
+
+    [了解更多](/zh/atbetaflight/)
+  </Card>
+</CardGrid>

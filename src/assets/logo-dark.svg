@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <defs>
+    <linearGradient id="logoGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#818cf8"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <!-- Stylized drone/aircraft icon -->
+  <g transform="translate(5, 8)">
+    <!-- Center body -->
+    <ellipse cx="12" cy="12" rx="6" ry="4" fill="url(#logoGradientDark)" opacity="0.9"/>
+    <!-- Arms -->
+    <line x1="6" y1="8" x2="2" y2="4" stroke="url(#logoGradientDark)" stroke-width="2" stroke-linecap="round"/>
+    <line x1="18" y1="8" x2="22" y2="4" stroke="url(#logoGradientDark)" stroke-width="2" stroke-linecap="round"/>
+    <line x1="6" y1="16" x2="2" y2="20" stroke="url(#logoGradientDark)" stroke-width="2" stroke-linecap="round"/>
+    <line x1="18" y1="16" x2="22" y2="20" stroke="url(#logoGradientDark)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Propellers -->
+    <circle cx="2" cy="4" r="3" fill="none" stroke="url(#logoGradientDark)" stroke-width="1.5" opacity="0.7"/>
+    <circle cx="22" cy="4" r="3" fill="none" stroke="url(#logoGradientDark)" stroke-width="1.5" opacity="0.7"/>
+    <circle cx="2" cy="20" r="3" fill="none" stroke="url(#logoGradientDark)" stroke-width="1.5" opacity="0.7"/>
+    <circle cx="22" cy="20" r="3" fill="none" stroke="url(#logoGradientDark)" stroke-width="1.5" opacity="0.7"/>
+  </g>
+</svg>

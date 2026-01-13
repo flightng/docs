@@ -1,0 +1,79 @@
+---
+title: Configuration Guide
+description: Fidelity X firmware configuration overview
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+:::caution[Page Incomplete]
+This page is not yet complete and is for reference only.
+:::
+
+This section explains how to configure Fidelity X firmware.
+
+---
+
+## Parameter System
+
+Fidelity X uses a parameter system for configuration. All configuration is done via CLI commands.
+
+### Basic Operations
+
+| Command | Function |
+|---------|----------|
+| `param list` | List all parameters |
+| `param get <name>` | Get parameter value |
+| `param set <name> <value>` | Set parameter |
+| `param save` | Save to Flash |
+| `param load` | Load from Flash |
+| `param reset` | Reset to defaults |
+
+:::note[Save Parameters]
+You must run `param save` after modifying parameters to save them permanently!
+:::
+
+---
+
+## Configuration Categories
+
+<CardGrid>
+  <LinkCard title="🎛️ PID Tuning" description="Adjust flight response and feel" href="/en/fydelix/configuration/pid-tuning/" />
+  <LinkCard title="📈 Rate Profiles" description="Adjust control sensitivity" href="/en/fydelix/configuration/rate-profiles/" />
+  <LinkCard title="🛡️ Safety System" description="Configure Failsafe protection" href="/en/fydelix/configuration/failsafe/" />
+</CardGrid>
+
+---
+
+## Quick Configuration Examples
+
+### 5" Freestyle
+
+```bash
+param set PID_ROLL_P 45
+param set PID_ROLL_I 80
+param set PID_ROLL_D 35
+param set GYRO_LPF_CUTOFF 100
+param save
+```
+
+### Tiny Whoop
+
+```bash
+param set PID_ROLL_P 35
+param set PID_ROLL_D 25
+param set GYRO_LPF_CUTOFF 80
+param save
+```
+
+---
+
+## Reset to Defaults
+
+```bash
+param reset
+param save
+```
+
+:::danger[Warning]
+This will clear all custom configuration!
+:::

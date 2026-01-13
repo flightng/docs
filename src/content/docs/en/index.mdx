@@ -1,0 +1,64 @@
+---
+title: FlightNG
+description: Next-generation flight controller firmware
+template: splash
+hero:
+  title: Fidelity X
+  tagline: Flight, Reimagined
+  actions:
+    - text: Get Started
+      link: /en/fydelix/
+      icon: right-arrow
+      variant: primary
+    - text: Download Firmware
+      link: https://github.com/flightng/firmware/releases
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<div class="section-highlight">
+  <h2>The distance between you and the sky is just a thought away</h2>
+  <p>
+    Not optimization, but built from scratch—crafted on a real-time operating system, with a carefully tuned signal chain ensuring both sharp response and silky feel, and progressive safety mechanisms keeping every landing under control.
+  </p>
+</div>
+
+<CardGrid>
+  <Card title="Instant Response" icon="rocket">
+    Parallel architecture, independent tasks—from fingertip to propeller, microsecond delivery, seamlessly
+  </Card>
+  <Card title="Built from Scratch" icon="setting">
+    Every line of code, born for flight—no porting, no compromise, only purity
+  </Card>
+  <Card title="Progressive Protection" icon="approve-check">
+    Multi-stage safety mechanisms, from signal recovery to safe landing, every stage has a plan
+  </Card>
+  <Card title="Precision Filtering" icon="bars">
+    Carefully tuned signal processing chain, where sharp response and silky feel are no longer a trade-off
+  </Card>
+</CardGrid>
+
+<div class="section-highlight">
+  <h2>Supported Flight Controllers</h2>
+</div>
+
+| Model | Chip | Size |
+|-------|------|------|
+| NeutronRC F435 SE | AT32F435RGT7 | 30.5x30.5mm |
+| NeutronRC F435 MINI | AT32F435CGU7 | 20x20mm |
+| Hummingbird 200RS | AT32F435 | 20x20mm |
+| Hummingbird 255 V1 | AT32F435 | 25.5x25.5mm |
+| StingerBee | AT32F435 | Whoop |
+
+<div class="section-highlight">
+  <h2>More Projects</h2>
+</div>
+
+<CardGrid>
+  <Card title="atbetaflight" icon="seti:code">
+    AT32 port of Betaflight, built for pilots familiar with Betaflight
+
+    [Learn More](/en/atbetaflight/)
+  </Card>
+</CardGrid>
