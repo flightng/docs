@@ -8,14 +8,14 @@
     --cards-max-width: 900px;           /* Cards grid container */
     --mobile-breakpoint: 768px;         /* Mobile responsive breakpoint */
     
-    /* Typography Scale */
-    --font-size-hero: 3.5rem;           /* Hero heading (h1) */
-    --font-size-section: 2rem;          /* Section headings (h2) */
-    --font-size-subsection: 1.5rem;     /* Subsection headings (h3) */
-    --font-size-lead: 1.25rem;          /* Lead/intro paragraphs */
-    --font-size-body: 1.125rem;         /* Body text */
-    --font-size-body-sm: 1.0625rem;     /* Small body text */
-    --font-size-table: 0.9rem;          /* Table content */
+    /* Typography Scale - Responsive using clamp(min, preferred, max) */
+    --font-size-hero: clamp(2rem, 8vw, 3.5rem);           /* Hero heading (h1) */
+    --font-size-section: clamp(1.5rem, 5vw, 2rem);        /* Section headings (h2) */
+    --font-size-subsection: clamp(1.25rem, 4vw, 1.5rem);  /* Subsection headings (h3) */
+    --font-size-lead: clamp(1rem, 3vw, 1.25rem);          /* Lead/intro paragraphs */
+    --font-size-body: clamp(1rem, 2.5vw, 1.125rem);       /* Body text */
+    --font-size-body-sm: clamp(0.9375rem, 2.3vw, 1.0625rem); /* Small body text */
+    --font-size-table: clamp(0.8rem, 2vw, 0.9rem);        /* Table content */
     
     /* Spacing */
     --spacing-section: 2rem;            /* Section padding */
@@ -349,16 +349,95 @@
     }
 }
 
-/* Mobile: disable fullpage, normal scroll */
+/* Mobile: keep fullpage sections but adjust typography */
 @media (max-width: 768px) {
+    /* Keep full height sections for snap scroll */
+    /* Use same header height as desktop for consistent snap behavior */
     .hero-section,
     .feature-highlight,
     .snap-section {
-        min-height: auto;
-        padding: var(--spacing-section-mobile) 1rem;
+        min-height: calc(100vh - var(--header-height));
+        min-height: calc(100dvh - var(--header-height)); /* Dynamic viewport height for mobile */
+        padding: 1.5rem 1rem;
+        overflow: hidden; /* Prevent content from leaking to next section */
     }
     
-    .hero-section::after {
-        display: none;
+    /* Ensure text doesn't overflow on mobile */
+    .hero-section h1,
+    .hero-section h2,
+    .feature-highlight h2,
+    .feature-highlight p,
+    .snap-section h2 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        max-width: 100%;
+    }
+    
+    /* Adjust letter-spacing for better mobile readability */
+    .hero-section h1 {
+        letter-spacing: -0.02em;
+    }
+    
+    .hero-section p {
+        letter-spacing: 0.05em;
+    }
+    
+    /* Reduce hero subtitle spacing on mobile */
+    .hero-section h2 {
+        margin-bottom: 1rem;
+    }
+    
+    /* Buttons on mobile */
+    .hero-section .md-button {
+        display: inline-block;
+        margin: 0.5rem 0.25rem;
+        padding: 0.6em 1.2em;
+        font-size: 0.9rem;
+    }
+    
+    /* Table responsiveness */
+    .md-typeset table:not([class]) {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Cards padding adjustment */
+    .grid.cards > ul > li {
+        padding: 0.75rem;
+    }
+    
+    /* Feature highlight paragraph - smaller on mobile */
+    .feature-highlight p {
+        font-size: clamp(0.85rem, 3.2vw, 1rem);
+        line-height: 1.6;
+    }
+    
+    /* Cards section - compact layout to fit in one screen */
+    .snap-section.cards-section {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .snap-section.cards-section h2 {
+        margin-bottom: 0.75rem;
+        font-size: clamp(1.25rem, 4.5vw, 1.5rem);
+    }
+    
+    /* Smaller cards on mobile */
+    .snap-section.cards-section .grid.cards > ul > li {
+        padding: 0.6rem 0.75rem;
+    }
+    
+    .snap-section.cards-section .grid.cards > ul > li p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin: 0;
+    }
+    
+    /* Reduce icon size */
+    .snap-section.cards-section .lg {
+        font-size: 1.2rem;
     }
 }

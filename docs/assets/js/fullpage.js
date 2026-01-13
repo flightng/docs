@@ -90,12 +90,14 @@
         currentSection = index;
         
         const section = sections[index];
-        const headerOffset = 60; // MkDocs header height
+        // Get actual header height from DOM
+        const header = document.querySelector('.md-header');
+        const headerOffset = header ? header.offsetHeight : 48;
         const elementPosition = section.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
         
         window.scrollTo({
-            top: offsetPosition,
+            top: Math.max(0, offsetPosition), // Ensure we don't scroll above page top
             behavior: 'smooth'
         });
         
