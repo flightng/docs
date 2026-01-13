@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>None./</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="None"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/"/>
+    </url>
+    <url>
+        <loc>Nonesponsor/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonesponsor/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/sponsor/"/>
+    </url>
+    <url>
+        <loc>Noneatbetaflight/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Noneatbetaflight/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/atbetaflight/"/>
+    </url>
+    <url>
+        <loc>Noneatbetaflight/tutorial/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Noneatbetaflight/tutorial/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/atbetaflight/tutorial/"/>
+    </url>
+    <url>
+        <loc>Nonefydelix/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/"/>
+    </url>
+    <url>
+        <loc>Nonefydelix/cli-reference/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/cli-reference/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/cli-reference/"/>
+    </url>
+    <url>
+        <loc>Nonefydelix/features/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/features/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/features/"/>
+    </url>
+    <url>
+        <loc>Nonefydelix/flashing/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/flashing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/flashing/"/>
+    </url>
+    <url>
+        <loc>Nonefydelix/getting-started/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/getting-started/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/getting-started/"/>
+    </url>
+    <url>
+        <loc>Nonefydelix/supported-boards/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/supported-boards/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/supported-boards/"/>
+    </url>
+    <url>
+        <loc>Nonefydelix/configuration/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/configuration/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/configuration/"/>
+    </url>
+    <url>
+        <loc>Nonefydelix/configuration/failsafe/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/configuration/failsafe/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/configuration/failsafe/"/>
+    </url>
+    <url>
+        <loc>Nonefydelix/configuration/pid-tuning/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/configuration/pid-tuning/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/configuration/pid-tuning/"/>
+    </url>
+    <url>
+        <loc>Nonefydelix/configuration/rate-profiles/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/configuration/rate-profiles/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/configuration/rate-profiles/"/>
+    </url>
+    <url>
+        <loc>Noneen/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="None"/>
+    </url>
+    <url>
+        <loc>Noneen/sponsor/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/sponsor/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonesponsor/"/>
+    </url>
+    <url>
+        <loc>Noneen/atbetaflight/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/atbetaflight/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Noneatbetaflight/"/>
+    </url>
+    <url>
+        <loc>Noneen/atbetaflight/tutorial/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/atbetaflight/tutorial/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Noneatbetaflight/tutorial/"/>
+    </url>
+    <url>
+        <loc>Noneen/fydelix/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/"/>
+    </url>
+    <url>
+        <loc>Noneen/fydelix/cli-reference/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/cli-reference/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/cli-reference/"/>
+    </url>
+    <url>
+        <loc>Noneen/fydelix/features/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/features/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/features/"/>
+    </url>
+    <url>
+        <loc>Noneen/fydelix/flashing/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/flashing/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/flashing/"/>
+    </url>
+    <url>
+        <loc>Noneen/fydelix/getting-started/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/getting-started/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/getting-started/"/>
+    </url>
+    <url>
+        <loc>Noneen/fydelix/supported-boards/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/supported-boards/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/supported-boards/"/>
+    </url>
+    <url>
+        <loc>Noneen/fydelix/configuration/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/configuration/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/configuration/"/>
+    </url>
+    <url>
+        <loc>Noneen/fydelix/configuration/failsafe/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/configuration/failsafe/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/configuration/failsafe/"/>
+    </url>
+    <url>
+        <loc>Noneen/fydelix/configuration/pid-tuning/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/configuration/pid-tuning/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/configuration/pid-tuning/"/>
+    </url>
+    <url>
+        <loc>Noneen/fydelix/configuration/rate-profiles/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/fydelix/configuration/rate-profiles/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonefydelix/configuration/rate-profiles/"/>
+    </url>
+</urlset>
