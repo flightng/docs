@@ -1,0 +1,62 @@
+---
+/**
+ * Custom Hero component for FlightNG landing page
+ * Apple-inspired design with mobile-first approach
+ * Feature cards are now managed in index.mdx to avoid duplication
+ */
+
+// Get locale - try multiple methods for reliability
+const pathname = Astro.url.pathname;
+// Check if URL contains /en/ anywhere (including trailing)
+const isEn = /\/en(\/|$)/.test(pathname);
+const isZh = !isEn;
+
+// Localized content - features moved to index.mdx
+const content = {
+  zh: {
+    title: 'Fidelity X',
+    tagline: '飞行，重新想象',
+    description: '实时内核 · 精调滤波 · 渐进守护',
+    cta: '开始体验',
+    ctaSecondary: '下载固件',
+  },
+  en: {
+    title: 'Fidelity X',
+    tagline: 'Flight, Reimagined',
+    description: 'Real-time Kernel · Precision Filtering · Progressive Protection',
+    cta: 'Get Started',
+    ctaSecondary: 'Download Firmware',
+  },
+};
+
+const t = isZh ? content.zh : content.en;
+---
+
+<div class="hero-landing">
+  <div class="hero-content">
+    <h1 class="hero-title">{t.title}</h1>
+    <p class="hero-tagline">{t.tagline}</p>
+    <p class="hero-description">{t.description}</p>
+    
+    <div class="hero-buttons">
+      <a href={isZh ? '/zh/fydelix/' : '/en/fydelix/'} class="hero-btn hero-btn-primary">
+        {t.cta}
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <a href="https://github.com/flightng/firmware/releases" class="hero-btn hero-btn-secondary" target="_blank" rel="noopener">
+        {t.ctaSecondary}
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  
+  <div class="scroll-indicator" aria-hidden="true"></div>
+</div>
+
+<style>
+  /* Component-specific styles are in custom.css */
+</style>

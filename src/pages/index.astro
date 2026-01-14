@@ -1,0 +1,22 @@
+---
+/**
+ * Root redirect - detects user's preferred language and redirects accordingly
+ * Uses client-side detection only to avoid prerender warnings
+ */
+---
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>FlightNG - Redirecting...</title>
+    <meta http-equiv="refresh" content="0;url=/en/" />
+  </head>
+  <body>
+    <script is:inline>
+      const browserLang = navigator.language || '';
+      const prefersChinese = browserLang.toLowerCase().startsWith('zh');
+      window.location.replace(prefersChinese ? '/zh/' : '/en/');
+    </script>
+    <p>Redirecting...</p>
+  </body>
+</html>
