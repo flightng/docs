@@ -17,11 +17,24 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
+<div class="snap-container">
+
+<section class="snap-section">
 <div class="section-highlight">
-  <h2>你与天空之间，只差一个念头的距离</h2>
-  <p>
-    不是优化，是从零构建——基于实时操作系统从零打造，精心调校的信号链路确保锐利响应与丝滑手感并存，渐进式安全机制让每一次降落都在掌控之中。
-  </p>
+
+## 你与天空之间，只差一个念头的距离
+
+不是优化，是从零构建——基于实时操作系统从零打造，精心调校的信号链路确保锐利响应与丝滑手感并存，渐进式安全机制让每一次降落都在掌控之中。
+
+</div>
+<div class="snap-scroll-hint" aria-hidden="true"></div>
+</section>
+
+<section class="snap-section">
+<div class="section-highlight">
+
+## 性能，源于架构
+
 </div>
 
 <CardGrid>
@@ -38,21 +51,40 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
     精心调校的信号处理链路，让锐利响应与丝滑手感不再是取舍题
   </Card>
 </CardGrid>
+<div class="snap-scroll-hint" aria-hidden="true"></div>
+</section>
 
+<section class="snap-section">
 <div class="section-highlight">
-  <h2>支持的飞控</h2>
+
+## 体验，源于细节
+
 </div>
 
-| 型号 | 芯片 | 尺寸 |
-|------|------|------|
-| NeutronRC F435 SE | AT32F435RGT7 | 30.5x30.5mm |
-| NeutronRC F435 MINI | AT32F435CGU7 | 20x20mm |
-| Hummingbird 200RS | AT32F435 | 20x20mm |
-| Hummingbird 255 V1 | AT32F435 | 25.5x25.5mm |
-| StingerBee | AT32F435 | Whoop |
+<CardGrid>
+  <Card title="精准建模" icon="star">
+    基于刚体动力学，飞行器的每一个响应都符合它本该有的样子
+  </Card>
+  <Card title="一键校准" icon="magnifier">
+    传感器自校准，静置片刻即可完成——复杂的事情，交给固件来做
+  </Card>
+  <Card title="直观配置" icon="pencil">
+    简洁的界面，清晰的逻辑——看一眼就懂，上手即会
+  </Card>
+  <Card title="无损记录" icon="document">
+    全新研发的无损黑盒日志，你的每一个动作都被精准记录、完整还原
+  </Card>
+</CardGrid>
+<div class="snap-scroll-hint" aria-hidden="true"></div>
+</section>
 
+<section class="snap-section">
 <div class="section-highlight">
-  <h2>更多项目</h2>
+
+## 更多项目
+
+探索 FlightNG 生态系统的其他成员
+
 </div>
 
 <CardGrid>
@@ -62,3 +94,6 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
     [了解更多](/zh/atbetaflight/)
   </Card>
 </CardGrid>
+</section>
+
+</div>

@@ -17,11 +17,24 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
+<div class="snap-container">
+
+<section class="snap-section">
 <div class="section-highlight">
-  <h2>The distance between you and the sky is just a thought away</h2>
-  <p>
-    Not optimization, but built from scratch—crafted on a real-time operating system, with a carefully tuned signal chain ensuring both sharp response and silky feel, and progressive safety mechanisms keeping every landing under control.
-  </p>
+
+## Between You and the Sky, Just a thought away.
+
+Not optimization, but built from scratch—crafted on a real-time operating system, with a carefully tuned signal chain ensuring both sharp response and silky feel, and progressive safety mechanisms keeping every landing under control.
+
+</div>
+<div class="snap-scroll-hint" aria-hidden="true"></div>
+</section>
+
+<section class="snap-section">
+<div class="section-highlight">
+
+## Performance by Architecture
+
 </div>
 
 <CardGrid>
@@ -38,21 +51,40 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
     Carefully tuned signal processing chain, where sharp response and silky feel are no longer a trade-off
   </Card>
 </CardGrid>
+<div class="snap-scroll-hint" aria-hidden="true"></div>
+</section>
 
+<section class="snap-section">
 <div class="section-highlight">
-  <h2>Supported Flight Controllers</h2>
+
+## Experience from Details
+
 </div>
 
-| Model | Chip | Size |
-|-------|------|------|
-| NeutronRC F435 SE | AT32F435RGT7 | 30.5x30.5mm |
-| NeutronRC F435 MINI | AT32F435CGU7 | 20x20mm |
-| Hummingbird 200RS | AT32F435 | 20x20mm |
-| Hummingbird 255 V1 | AT32F435 | 25.5x25.5mm |
-| StingerBee | AT32F435 | Whoop |
+<CardGrid>
+  <Card title="Precision Modeling" icon="star">
+    Based on rigid body dynamics, every response of the aircraft behaves exactly as it should
+  </Card>
+  <Card title="One-Click Calibration" icon="magnifier">
+    Sensor self-calibration, just rest for a moment—let the firmware handle the complex tasks
+  </Card>
+  <Card title="Intuitive Configuration" icon="pencil">
+    Clean interface, clear logic—understand at a glance, master immediately
+  </Card>
+  <Card title="Lossless Recording" icon="document">
+    Newly developed lossless blackbox logging, your every action precisely recorded and fully restored
+  </Card>
+</CardGrid>
+<div class="snap-scroll-hint" aria-hidden="true"></div>
+</section>
 
+<section class="snap-section">
 <div class="section-highlight">
-  <h2>More Projects</h2>
+
+## More Projects
+
+Explore more from the FlightNG ecosystem
+
 </div>
 
 <CardGrid>
@@ -62,3 +94,6 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
     [Learn More](/en/atbetaflight/)
   </Card>
 </CardGrid>
+</section>
+
+</div>

@@ -1,34 +1,22 @@
 ---
 /**
  * Root redirect - detects user's preferred language and redirects accordingly
+ * Uses client-side detection only to avoid prerender warnings
  */
-
-// Get Accept-Language header
-const acceptLanguage = Astro.request.headers.get('accept-language') || '';
-
-// Check if user prefers Chinese
-const prefersChinese = acceptLanguage.toLowerCase().includes('zh');
-
-// Determine redirect URL
-const redirectUrl = prefersChinese ? '/zh/' : '/en/';
 ---
-
-<script define:vars={{ redirectUrl }}>
-  // Client-side redirect with language detection
-  const browserLang = navigator.language || navigator.userLanguage || '';
-  const prefersChinese = browserLang.toLowerCase().startsWith('zh');
-  const targetUrl = prefersChinese ? '/zh/' : '/en/';
-  window.location.replace(targetUrl);
-</script>
-
-<meta http-equiv="refresh" content={`0;url=${redirectUrl}`} />
 
 <html>
   <head>
     <meta charset="utf-8" />
     <title>FlightNG - Redirecting...</title>
+    <meta http-equiv="refresh" content="0;url=/en/" />
   </head>
   <body>
-    <p>Redirecting to <a href={redirectUrl}>{redirectUrl}</a>...</p>
+    <script is:inline>
+      const browserLang = navigator.language || '';
+      const prefersChinese = browserLang.toLowerCase().startsWith('zh');
+      window.location.replace(prefersChinese ? '/zh/' : '/en/');
+    </script>
+    <p>Redirecting...</p>
   </body>
 </html>

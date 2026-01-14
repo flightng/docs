@@ -14,6 +14,9 @@
   /* Layout */
   --sl-content-width: 75ch;
   --sl-sidebar-width: 18rem;
+  
+  /* Snap Scroll */
+  --header-height: 4rem;
 }
 
 /* Dark mode accent adjustments */
@@ -23,9 +26,211 @@
   --sl-color-accent-high: #c7d2fe;
 }
 
+/* ===== Snap Scroll for Splash Pages ===== */
+
+/* 
+ * Snap scroll implementation for landing pages
+ * Uses :has() selector to detect snap-container presence
+ */
+html:has(.snap-container),
+html:has(.snap-container) body {
+  scroll-snap-type: y mandatory !important;
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  height: 100vh !important;
+  height: 100svh !important;
+  scroll-behavior: smooth;
+}
+
+/* Override any Starlight default styles that might interfere */
+html:has(.snap-container) body,
+html:has(.snap-container) main,
+html:has(.snap-container) .main-frame,
+html:has(.snap-container) .content-panel {
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+/* Hero section as first snap target */
+html:has(.snap-container) .hero-landing {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* Snap container wrapper - uses display:contents to let children participate in snap */
+.snap-container {
+  display: contents;
+}
+
+/* Individual snap sections */
+.snap-section {
+  min-height: 100vh;
+  min-height: 100svh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Different section backgrounds for visual separation */
+.snap-section:nth-child(odd) {
+  background: var(--sl-color-bg);
+}
+
+.snap-section:nth-child(even) {
+  background: var(--sl-color-bg-nav);
+}
+
+/* Gradient overlays for visual depth */
+.snap-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.snap-section:nth-child(1)::before {
+  background: radial-gradient(ellipse 100% 100% at 50% 0%, rgba(99, 102, 241, 0.08), transparent 70%);
+}
+
+.snap-section:nth-child(2)::before {
+  background: radial-gradient(ellipse 80% 80% at 30% 100%, rgba(139, 92, 246, 0.06), transparent 60%);
+}
+
+.snap-section:nth-child(3)::before {
+  background: radial-gradient(ellipse 80% 80% at 70% 50%, rgba(99, 102, 241, 0.06), transparent 60%);
+}
+
+.snap-section:nth-child(4)::before {
+  background: radial-gradient(ellipse 80% 80% at 30% 50%, rgba(139, 92, 246, 0.06), transparent 60%);
+}
+
+:root[data-theme='dark'] .snap-section::before {
+  opacity: 0.8;
+}
+
+/* Content inside snap sections */
+.snap-section .section-highlight {
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.snap-section .section-highlight h2 {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* CardGrid inside snap sections */
+.snap-section > :global(.sl-link-card-grid),
+.snap-section > :global(.not-content) {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Scroll indicator for snap sections */
+.snap-scroll-hint {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.4;
+  animation: bounce 2s infinite;
+  transition: opacity 0.3s;
+}
+
+.snap-scroll-hint::after {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-right: 2px solid var(--sl-color-gray-3);
+  border-bottom: 2px solid var(--sl-color-gray-3);
+  transform: rotate(45deg);
+}
+
+/* Hide scroll hint on last section */
+.snap-section:last-child .snap-scroll-hint {
+  display: none;
+}
+
+/* ===== Responsive Snap Scroll ===== */
+
+/* Tablet landscape / small desktop */
+@media (max-width: 1024px) {
+  .snap-section {
+    padding: 2rem 1.25rem;
+  }
+  
+  .snap-section .card-grid {
+    gap: 1rem;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 3.5rem;
+  }
+  
+  /* Use proximity snap for smoother UX on tablets */
+  html:has(.snap-container) {
+    scroll-snap-type: y proximity !important;
+  }
+  
+  .snap-section {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 4rem 1rem;
+  }
+  
+  .snap-scroll-hint {
+    display: none;
+  }
+}
+
+/* Mobile portrait - keep snap scroll but use proximity for smoother UX */
+@media (max-width: 480px) {
+  html:has(.snap-container),
+  html:has(.snap-container) body {
+    scroll-snap-type: y proximity !important;
+  }
+  
+  .snap-section {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 2rem 1rem;
+  }
+}
+
+/* Landscape mobile - use proximity snap */
+@media (max-height: 500px) and (orientation: landscape) {
+  html:has(.snap-container) {
+    scroll-snap-type: y proximity !important;
+  }
+  
+  .snap-section {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 2rem 2rem;
+  }
+}
+
 /* ===== Hero Section Styles ===== */
 .hero-landing {
-  min-height: calc(100svh - 4rem);
+  /* Height is set in snap scroll section */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -266,7 +471,6 @@
 /* ===== Mobile Optimizations ===== */
 @media (max-width: 768px) {
   .hero-landing {
-    min-height: calc(100svh - 3.5rem);
     padding: 1.5rem 1rem;
   }
   
