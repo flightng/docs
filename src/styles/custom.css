@@ -11,12 +11,31 @@
   --sl-font-system: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
   --sl-font-mono: 'SF Mono', 'Fira Code', Monaco, Consolas, monospace;
   
-  /* Layout */
-  --sl-content-width: 75ch;
-  --sl-sidebar-width: 18rem;
-  
   /* Snap Scroll */
   --header-height: 4rem;
+}
+
+/* ===== Large screen layout adjustments ===== */
+/* Widen content area on large screens */
+@media (min-width: 72rem) {
+  :root {
+    --sl-content-width: 52rem;
+  }
+}
+
+@media (min-width: 100rem) {
+  :root {
+    --sl-content-width: 58rem;
+  }
+}
+
+/* Pin TOC to the right edge of the screen */
+@media (min-width: 72rem) {
+  .right-sidebar {
+    inset-inline-end: 0;
+    inset-inline-start: auto;
+    width: var(--sl-sidebar-width);
+  }
 }
 
 /* Dark mode accent adjustments */
