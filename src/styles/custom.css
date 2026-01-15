@@ -34,6 +34,7 @@
   .right-sidebar {
     inset-inline-end: 0;
     inset-inline-start: auto;
+    /* Relies on Starlight's default --sl-sidebar-width; not redefined here to preserve core layout */
     width: var(--sl-sidebar-width);
   }
 }
