@@ -111,10 +111,10 @@ For development and debugging, requires an SWD debugger (e.g., J-Link, DAP-Link)
 
 | Board | Firmware Name |
 |-------|---------------|
-| NeutronRC F435 SE | `fydelix-NeutronRCF435SE` |
-| NeutronRC F435 MINI | `fydelix-NeutronRCF435MINI` |
-| Hummingbird 200RS | `fydelix-Hummingbird200RS` |
-| Hummingbird 255 V1 | `fydelix-Hummingbird255V1REVA` |
+| NeutronRCF435SE | `fydelix-NeutronRCF435SE` |
+| NeutronRCF435MINI | `fydelix-NeutronRCF435MINI` |
+| Hummingbird200RS | `fydelix-Hummingbird200RS` |
+| Hummingbird255V1 | `fydelix-Hummingbird255V1REVA` |
 | StingerBee | `fydelix-StingerBee` |
 
 ---
