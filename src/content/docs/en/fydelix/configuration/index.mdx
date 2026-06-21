@@ -5,75 +5,72 @@ description: Fidelity X firmware configuration overview
 
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-:::caution[Page Incomplete]
-This page is not yet complete and is for reference only.
-:::
-
-This section explains how to configure Fidelity X firmware.
+Fidelity X is configured mainly through the graphical [Fidelity X Configurator](https://app.flightng.com) — just open it in a WebSerial-capable browser (Chrome / Edge), no install required.
 
 ---
 
-## Parameter System
+## Connecting
 
-Fidelity X uses a parameter system for configuration. All configuration is done via CLI commands.
+1. Connect the flight controller to your computer with a USB cable
+2. Open [app.flightng.com](https://app.flightng.com) in your browser
+3. Click **Connect** in the top right, pick the matching serial device in the picker and authorize it
 
-### Basic Operations
+Once connected, the navigation bar reveals the configuration pages below.
 
-| Command | Function |
-|---------|----------|
-| `param list` | List all parameters |
-| `param get <name>` | Get parameter value |
-| `param set <name> <value>` | Set parameter |
-| `param save` | Save to Flash |
-| `param load` | Load from Flash |
-| `param reset` | Reset to defaults |
+---
 
-:::note[Save Parameters]
-You must run `param save` after modifying parameters to save them permanently!
+## Configurator Pages at a Glance
+
+| Page | Purpose |
+|------|---------|
+| Status | Attitude display, board orientation editing, IMU calibration, parameter backup/restore (YAML), reboot to DFU |
+| Motors | Motor map, pole pairs, direction, CG bias, motor testing |
+| Receiver | Stick preview, channel mapping, polarity, deadzone, AUX function binding |
+| OSD | OSD layout editor, element toggles, output port selection |
+| Presets | Apply official preset configurations |
+| Configuration | Rate curves, filters, PID tuning |
+| Debug | Live IMU data capture |
+| Storage | Blackbox storage overview, logging mode, USB export, format |
+| CLI | Command-line terminal (advanced) |
+
+Firmware flashing happens on the **Home** page while disconnected — see [Firmware Flashing](/en/fydelix/flashing/).
+
+---
+
+## The "Configuration" Page
+
+The configurator's **Configuration** page has three sections:
+
+| Section | Contents | Parameters |
+|---------|----------|------------|
+| Rates | Per-axis rate curve type + RC Rate / Super Rate / Expo | `rate_curve_type`, `rate_curve_roll/pitch/yaw` |
+| Filters | RPM filter strength | `rpm_filter_strength` |
+| PIDs | Angle loop, rate loop, D-term filter, TPA/TDA | `angle_pid_small/big`, `rate_pid_roll/pitch/yaw`, `dterm_lpf_cutoff` |
+
+:::note[Saving settings]
+After editing in the configurator, click **Save** to write to the flight controller's flash. **Reset** clears all parameters back to defaults.
 :::
 
 ---
 
-## Configuration Categories
+## Topic Guides
 
 <CardGrid>
   <LinkCard title="🎛️ PID Tuning" description="Adjust flight response and feel" href="/en/fydelix/configuration/pid-tuning/" />
   <LinkCard title="📈 Rate Profiles" description="Adjust control sensitivity" href="/en/fydelix/configuration/rate-profiles/" />
-  <LinkCard title="🛡️ Safety System" description="Configure Failsafe protection" href="/en/fydelix/configuration/failsafe/" />
+  <LinkCard title="🛡️ Safety System" description="Understand Failsafe protection" href="/en/fydelix/configuration/failsafe/" />
 </CardGrid>
 
 ---
 
-## Quick Configuration Examples
+## CLI Method (Advanced)
 
-### 5" Freestyle
-
-```bash
-param set PID_ROLL_P 45
-param set PID_ROLL_I 80
-param set PID_ROLL_D 35
-param set GYRO_LPF_CUTOFF 100
-param save
-```
-
-### Tiny Whoop
+If you prefer the command line, you can read/write parameters on the **CLI** page with the `config` command:
 
 ```bash
-param set PID_ROLL_P 35
-param set PID_ROLL_D 25
-param set GYRO_LPF_CUTOFF 80
-param save
+config get rate_pid_roll
+config set dterm_lpf_cutoff 90
+config save
 ```
 
----
-
-## Reset to Defaults
-
-```bash
-param reset
-param save
-```
-
-:::danger[Warning]
-This will clear all custom configuration!
-:::
+See the [CLI Reference](/en/fydelix/cli-reference/) for the full command set.

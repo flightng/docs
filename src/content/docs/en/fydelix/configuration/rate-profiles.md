@@ -3,127 +3,74 @@ title: Rate Profiles
 description: Configure stick response curves
 ---
 
-:::caution[Page Incomplete]
-This page is not yet complete and is for reference only.
+Rate curves define the relationship between stick position and the aircraft's rotation speed. Set them in the [configurator](https://app.flightng.com) under **Configuration → Rates**.
+
+---
+
+## Three Curve Types
+
+Fidelity X supports three rate curve algorithms, and **each axis (Roll / Pitch / Yaw) can independently use a different type**:
+
+| Type | Best for |
+|------|----------|
+| Betaflight Rate | Pilots migrating from Betaflight — identical feel |
+| Actual Rate | Pilots who prefer intuitive setup and a direct max-rate value |
+| FlightOne Rate | Pilots migrating from FalcoX / FlightOne |
+
+Each axis's curve type is stored in `rate_curve_type` (an array for Roll / Pitch / Yaw).
+
+---
+
+## Curve Parameters
+
+Whatever the type, each axis's curve parameters are stored in its array parameter:
+
+| Parameter | Axis |
+|-----------|------|
+| `rate_curve_roll` | Roll |
+| `rate_curve_pitch` | Pitch |
+| `rate_curve_yaw` | Yaw |
+
+In the **Rates** section, each axis exposes three adjustable fields (using Betaflight Rate as an example):
+
+| Field | Role |
+|-------|------|
+| RC Rate | Base rate, affects overall response |
+| Super Rate | End-of-throw gain, affects max rotation speed |
+| Expo | Center-region curve, reduces center sensitivity |
+
+:::tip[Where to edit]
+Rate curves hold several values, so it's strongly recommended to adjust them in the configurator's **Configuration → Rates** UI — you can see the curve shape in real time, far more intuitive than the CLI.
 :::
-
-Rate profiles define the relationship between stick position and aircraft rotation speed.
-
----
-
-## Rate Profile Types
-
-Fidelity X supports multiple rate profiles:
-
-| Type | Characteristics |
-|------|-----------------|
-| Betaflight Rate | Compatible with Betaflight, easy migration |
-| Actual Rate | More intuitive, directly set max angular rate |
-
----
-
-## Betaflight Rate
-
-### Parameters
-
-| Parameter | Description | Range |
-|-----------|-------------|-------|
-| RC Rate | Base rate | 0.1 - 3.0 |
-| Super Rate | Stick endpoint gain | 0.0 - 1.0 |
-| Expo | Center zone curve | 0.0 - 1.0 |
-
-### Parameter Effects
-
-- **RC Rate**: Affects overall response, especially center zone
-- **Super Rate**: Affects max speed at stick endpoints
-- **Expo**: Reduces center zone sensitivity
-
----
-
-## Actual Rate
-
-### Parameters
-
-| Parameter | Description | Range |
-|-----------|-------------|-------|
-| Center Sensitivity | Center sensitivity (°/s) | 50 - 500 |
-| Max Rate | Max angular rate (°/s) | 200 - 2000 |
-| Expo | Curve exponent | 0.0 - 1.0 |
-
-### Advantages
-
-- More intuitive
-- Directly set max angular rate
-- Independently adjust center sensitivity
-
----
-
-## Recommended Settings
-
-### Betaflight Rate
-
-#### Beginner
-
-| Parameter | Roll | Pitch | Yaw |
-|-----------|------|-------|-----|
-| RC Rate | 0.7 | 0.7 | 0.7 |
-| Super Rate | 0.5 | 0.5 | 0.5 |
-| Expo | 0.3 | 0.3 | 0.0 |
-
-#### Intermediate
-
-| Parameter | Roll | Pitch | Yaw |
-|-----------|------|-------|-----|
-| RC Rate | 1.0 | 1.0 | 1.0 |
-| Super Rate | 0.7 | 0.7 | 0.7 |
-| Expo | 0.2 | 0.2 | 0.0 |
-
-#### Advanced
-
-| Parameter | Roll | Pitch | Yaw |
-|-----------|------|-------|-----|
-| RC Rate | 1.2 | 1.2 | 1.0 |
-| Super Rate | 0.8 | 0.8 | 0.7 |
-| Expo | 0.1 | 0.1 | 0.0 |
 
 ---
 
 ## Tuning Tips
 
-### Center Too Sensitive
+### Center too sensitive
 
-Increase Expo:
+Increase **Expo** to soften the center region.
 
-```bash
-param set ROLL_RC_EXPO 0.3
-param set PITCH_RC_EXPO 0.3
-param save
-```
+### Not enough roll speed
 
-### Not Enough Roll Speed
+Increase **Super Rate** to raise the max rate at the end of stick throw.
 
-Increase Super Rate:
+### Yaw too sensitive / twitchy
 
-```bash
-param set ROLL_SUPER_RATE 0.8
-param save
-```
-
-### Yaw Twitching
-
-Reduce Yaw rate:
-
-```bash
-param set YAW_RC_RATE 0.8
-param save
-```
+Lower the Yaw axis's **RC Rate** or **Super Rate** alone — thanks to per-axis curves, tuning Yaw won't affect Roll / Pitch.
 
 ---
 
 ## Migrating from Betaflight
 
-If you're migrating from Betaflight, you can use the same rate settings directly:
+If you're coming from Betaflight:
 
-1. Select Betaflight Rate type
-2. Enter your RC Rate, Super Rate, Expo values from Betaflight
-3. Save settings
+1. Set the axis's curve type to **Betaflight Rate**
+2. Enter your Betaflight RC Rate, Super Rate and Expo values
+3. Click **Save**
+
+Your feel carries over seamlessly.
+
+:::note[Saving settings]
+Remember to click **Save** after editing (or `config save` from the CLI).
+:::

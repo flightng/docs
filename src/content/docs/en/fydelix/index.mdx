@@ -8,7 +8,7 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 <div style="text-align: center; padding: 2rem 0;">
   <h2>Redefining the Flight Experience</h2>
   <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-    <a href="https://flightng.github.io/test-configurator" class="sl-btn" style="background: var(--sl-color-accent); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none;">Open Configurator</a>
+    <a href="https://app.flightng.com" class="sl-btn" style="background: var(--sl-color-accent); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none;">Open Configurator</a>
     <a href="https://github.com/flightng/firmware/releases" class="sl-btn" style="border: 1px solid var(--sl-color-accent); padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none;">Download Firmware</a>
   </div>
 </div>
@@ -75,10 +75,10 @@ Yaw, Pitch, and Roll can each use different curves. Your flight style, defined b
 
 | Capability | Support |
 |------------|---------|
-| OSD Display | MSP protocol, compatible with mainstream VTX |
-| Flight Recording | Onboard Blackbox with deep analysis |
-| RC Protocols | CRSF · SBUS |
-| Motor Protocol | Bidirectional DShot600 |
+| OSD Display | MSP DisplayPort protocol for digital VTX; some boards carry an onboard MAX7456 |
+| Flight Recording | Onboard flash / SD-card Blackbox with deep analysis |
+| RC Protocols | CRSF · SBUS · SBUS_FAST |
+| Motor Protocol | Bidirectional DShot (150/300/600) |
 
 ---
 
@@ -87,14 +87,14 @@ Yaw, Pitch, and Roll can each use different curves. Your flight style, defined b
 | Sensor | Status |
 |--------|--------|
 | BMI270 | ✅ Full Support |
-| QMI8658C | ✅ Full Support |
 | ICM-42688-P | ⚠️ Limited Support |
+| LSM6DSV16X / LSM6DSK320X | ✅ Full Support |
 
 ---
 
 ## Current Version
 
-**v0.1.3**　[View Changelog](https://github.com/flightng/firmware/releases)
+**v0.2.0**　[View Changelog](https://github.com/flightng/firmware/releases)
 
 ---
 

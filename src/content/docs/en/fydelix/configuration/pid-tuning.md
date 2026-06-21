@@ -3,136 +3,126 @@ title: PID Tuning
 description: Adjust PID parameters for optimal flight performance
 ---
 
-:::caution[Page Incomplete]
-This page is not yet complete and is for reference only.
-:::
-
-This guide explains how to adjust PID parameters for optimal flight performance.
+This guide covers tuning PID parameters for the best flight feel. Set them in the [configurator](https://app.flightng.com) under **Configuration → PIDs**.
 
 ---
 
 ## PID Basics
 
-A PID controller consists of three parts:
+A PID controller has three terms:
 
-| Term | Function |
-|------|----------|
-| **P** (Proportional) | Responds to current error, higher = faster response |
-| **I** (Integral) | Eliminates steady-state error, maintains attitude |
-| **D** (Derivative) | Predicts and suppresses oscillation |
+| Term | Role |
+|------|------|
+| **P** (Proportional) | Responds to the current error — higher means faster response |
+| **I** (Integral) | Eliminates steady-state error, holds attitude |
+| **D** (Derivative) | Predicts and damps oscillation |
 
 ---
 
-## PID Parameters
+## Rate PID (Inner Loop)
 
-### Roll/Pitch
+The inner loop is the core of flight feel and applies to Acro / manual mode. Each axis stores P, I, D in a single array parameter:
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `PID_ROLL_P` | Roll P gain | 45 |
-| `PID_ROLL_I` | Roll I gain | 80 |
-| `PID_ROLL_D` | Roll D gain | 35 |
-| `PID_PITCH_P` | Pitch P gain | 45 |
-| `PID_PITCH_I` | Pitch I gain | 80 |
-| `PID_PITCH_D` | Pitch D gain | 35 |
+| Parameter | Axis | Default (P, I, D) |
+|-----------|------|--------------------|
+| `rate_pid_roll` | Roll | 34, 54, 26 |
+| `rate_pid_pitch` | Pitch | 36, 52, 28 |
+| `rate_pid_yaw` | Yaw | 30, 110, 0 |
 
-### Yaw
+:::tip[Where to edit]
+Edit each axis's P/I/D in separate input fields under **Configuration → PIDs** — far easier than the command line. A default Yaw D of 0 is normal.
+:::
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `PID_YAW_P` | Yaw P gain | 45 |
-| `PID_YAW_I` | Yaw I gain | 80 |
-| `PID_YAW_D` | Yaw D gain | 0 |
+---
+
+## Angle PID (Outer Loop)
+
+The outer loop is used in self-leveling (Angle) mode, mapping stick position to a target angle:
+
+| Parameter | Meaning | Default |
+|-----------|---------|---------|
+| `angle_pid_small` | Small-angle-error gain | 10, 3 |
+| `angle_pid_big` | Large-angle-error gain | 5, 0 |
+
+Most pilots get stable self-leveling with the defaults.
+
+---
+
+## D-Term Filter
+
+The PID derivative term is noise-sensitive, so it has a dedicated low-pass filter:
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `dterm_lpf_cutoff` | 90 | D-term low-pass cutoff frequency (Hz) |
+
+A lower cutoff keeps motors cooler but adds slight lag; a higher cutoff sharpens response but may heat motors.
 
 ---
 
 ## Tuning Method
 
-### Step 1: Adjust P
+The core idea: **find a good P/D ratio first, tune I last**. Do this alongside the **step response** analysis on the configurator's **Blackbox** page.
 
-1. Start from default values
-2. Gradually increase P
-3. When high-frequency vibration appears, reduce by 10-20%
-
-### Step 2: Adjust D
-
-1. D is used to suppress oscillation caused by P
-2. Gradually increase D
-3. When motors get hot or noise appears, reduce D
-
-:::caution[Symptoms of D Too High]
-- Motors getting hot
-- High-frequency noise
-- Propeller shaking
+:::tip[Lower I first on large craft]
+On large frames the integral term (I) masks the true P/D behavior. Drop I to a low value (around **10**) first, then add it back once the P/D ratio is dialed in.
 :::
 
-### Step 3: Adjust I
+### Step 1: Lower I
 
-1. I is used to maintain attitude
-2. Usually default values work fine
-3. I too low causes drift, too high causes low-frequency wobble
+Reduce each axis's I to around 10 (especially recommended for large craft) so the P/D response is fully exposed and easy to observe.
 
----
+### Step 2: Find a good P/D ratio
 
-## Common Issues
+This is the heart of tuning.
 
-### High-Frequency Vibration
+1. Increase P gradually until high-frequency vibration appears, then back off 10–20%
+2. Add D to damp the oscillation caused by P (reduce D if motors get hot or noisy)
+3. Iterate until P and D are balanced — that's your **P/D ratio**
+4. After each change, check the **step response** on the Blackbox page: an ideal trace tracks quickly, overshoots slightly, with no sustained oscillation
 
-**Symptoms**: Blurry propellers while hovering, hot motors
+:::caution[Symptoms of too much D]
+- Hot motors
+- High-frequency noise
+- Propeller flutter
+:::
 
-**Solution**: Reduce D gain or filter cutoff frequency
+### Step 3: Add I back
 
-### Low-Frequency Wobble
+Once the P/D ratio is set, gradually restore I to the target value:
 
-**Symptoms**: Aircraft swaying side to side
-
-**Solution**: Reduce P or I gain
-
-### Sluggish Response
-
-**Symptoms**: Delayed response after stick input
-
-**Solution**: Increase P and D gains
-
----
-
-## Recommended Settings
-
-### 5" Freestyle
-
-| Parameter | Value |
-|-----------|-------|
-| P (Roll/Pitch) | 45 |
-| I (Roll/Pitch) | 80 |
-| D (Roll/Pitch) | 35 |
-
-### 5" Racing
-
-| Parameter | Value |
-|-----------|-------|
-| P (Roll/Pitch) | 55 |
-| I (Roll/Pitch) | 90 |
-| D (Roll/Pitch) | 40 |
-
-### Tiny Whoop
-
-| Parameter | Value |
-|-----------|-------|
-| P (Roll/Pitch) | 35 |
-| I (Roll/Pitch) | 70 |
-| D (Roll/Pitch) | 25 |
+1. Increase I from the lowered value in Step 1
+2. Too little I causes drift; too much causes low-frequency wobble
+3. Again, use the Blackbox step response to confirm there's no low-frequency wobble
 
 ---
 
-## Tuning Checklist
+## Common Problems
 
-- [ ] Calibrate accelerometer
-- [ ] Check motor direction
-- [ ] Start from default PID
-- [ ] Tune P first, then D
-- [ ] Fine-tune I last
-- [ ] Save settings
+### High-frequency vibration
 
-```bash
-param save
-```
+**Symptom**: blurry props at hover, hot motors
+**Fix**: lower the D gain, or reduce `dterm_lpf_cutoff` under **Configuration → Filters**
+
+### Low-frequency wobble
+
+**Symptom**: the aircraft rocks side to side
+**Fix**: lower P or I gain
+
+### Sluggish response
+
+**Symptom**: delayed reaction to stick inputs
+**Fix**: increase P and D gain
+
+---
+
+## Saving Settings
+
+Always save after tuning:
+
+- **Configurator**: click **Save**
+- **CLI**: run `config save`
+
+:::note[Array parameter tip]
+`rate_pid_*` is an array parameter holding the three P/I/D values — easiest to edit in the configurator UI. From the CLI, `config get rate_pid_roll` shows the current values.
+:::

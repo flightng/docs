@@ -8,7 +8,7 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 <div style="text-align: center; padding: 2rem 0;">
   <h2>重新定义飞行体验</h2>
   <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-    <a href="https://flightng.github.io/test-configurator" class="sl-btn" style="background: var(--sl-color-accent); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none;">打开调参器</a>
+    <a href="https://app.flightng.com" class="sl-btn" style="background: var(--sl-color-accent); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none;">打开调参器</a>
     <a href="https://github.com/flightng/firmware/releases" class="sl-btn" style="border: 1px solid var(--sl-color-accent); padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none;">下载固件</a>
   </div>
 </div>
@@ -75,10 +75,10 @@ Yaw、Pitch、Roll 可以分别使用不同曲线。你的飞行风格，由你�
 
 | 能力 | 支持 |
 |------|------|
-| OSD 显示 | MSP 协议，兼容主流图传 |
-| 飞行记录 | 板载 Blackbox，支持深度分析 |
-| 遥控协议 | CRSF · SBUS |
-| 电机协议 | 双向 DShot600 |
+| OSD 显示 | MSP DisplayPort 协议，兼容数字图传；部分飞控板载 MAX7456 |
+| 飞行记录 | 板载 Flash / SD 卡 Blackbox，支持深度分析 |
+| 遥控协议 | CRSF · SBUS · SBUS_FAST |
+| 电机协议 | 双向 DShot（150/300/600） |
 
 ---
 
@@ -87,14 +87,14 @@ Yaw、Pitch、Roll 可以分别使用不同曲线。你的飞行风格，由你�
 | 传感器 | 状态 |
 |--------|------|
 | BMI270 | ✅ 完整支持 |
-| QMI8658C | ✅ 完整支持 |
 | ICM-42688-P | ⚠️ 有限支持 |
+| LSM6DSV16X / LSM6DSK320X | ✅ 完整支持 |
 
 ---
 
 ## 当前版本
 
-**v0.1.3**　[查看更新日志](https://github.com/flightng/firmware/releases)
+**v0.2.0**　[查看更新日志](https://github.com/flightng/firmware/releases)
 
 ---
 

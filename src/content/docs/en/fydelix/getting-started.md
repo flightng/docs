@@ -19,8 +19,9 @@ This guide will help you get started with Fidelity X firmware quickly.
 
 | Software | Purpose | Source |
 |----------|---------|--------|
-| Artery DFU Driver | Firmware flashing | [Artery Website](https://www.arterytek.com/en/support/index.jsp) |
-| Chrome/Chromium Browser | Configurator access | Must support WebUSB/WebSerial |
+| Fidelity X Configurator | Flash firmware / configure the FC | [app.flightng.com](https://app.flightng.com) (web, no install) |
+| Chrome / Edge browser | Run the configurator | Must support WebSerial / WebUSB |
+| Artery DFU Driver | Flashing AT32 boards (Windows) | [Artery Website](https://www.arterytek.com/en/support/index.jsp) |
 
 :::note[Browser Requirements]
 A browser with WebUSB/WebSerial support is required. Chrome or Chromium-based browsers (such as Edge, Brave, etc.) are recommended.
@@ -54,10 +55,10 @@ See [Firmware Flashing Guide](/en/fydelix/flashing/) for detailed steps.
 
 ### 3. First Connection
 
-After flashing, connect to the flight controller using Configurator:
+After flashing, open the [Fidelity X Configurator](https://app.flightng.com) in your browser to connect:
 
 1. Click the **Connect** button in the top right corner
-2. Select **FlightNG FC** from the popup menu
+2. In the browser's serial port picker, select the matching serial device and authorize it
 
 ---
 
@@ -113,11 +114,13 @@ With the receiver powered on:
    - **Channel mapping**: Adjust channel assignments
    - **Polarity**: Fix reversed directions
    - **Deadband**: Adjust stick deadband size
-4. The **AuxFunction** section allows you to bind functions to specific channels:
+4. The **AUX functions (AuxFunction)** section lets you bind switch functions to channels:
    - Arm
    - Pre-arm
-   - Angle Mode
-   - Other functions...
+   - Angle
+   - Blackbox
+   - Beeper
+   - Beacon
 
 ---
 
@@ -142,7 +145,7 @@ Before flying, confirm:
 - [Learn about Failsafe](/en/fydelix/configuration/failsafe/) - Ensure flight safety
 
 :::note[About Filters]
-Fidelity X firmware uses hardcoded filters by design. Users should not adjust filter parameters.
+Most of the Fidelity X filtering chain is pre-tuned for you. Day to day you only need the **Configuration** page's D-term filter (`dterm_lpf_cutoff`) and RPM filter strength (`rpm_filter_strength`) — there's no need to touch the lower-level parameters.
 :::
 
 ---

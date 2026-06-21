@@ -3,80 +3,71 @@ title: CLI Reference
 description: Fidelity X command line interface reference
 ---
 
-:::caution[Page Incomplete]
-This page is not yet complete and is for reference only.
-:::
+Fidelity X provides a command line interface (CLI) for advanced configuration and debugging.
 
-Fidelity X provides a command line interface (CLI) for configuration and debugging.
+:::tip[Use the configurator for everyday config]
+Almost everything can be done in the graphical [Fidelity X Configurator](https://app.flightng.com) — it's more intuitive and safer. The CLI is mainly for advanced users and troubleshooting — the configurator's **CLI** tab lets you type the commands below directly.
+:::
 
 ---
 
 ## Connection
 
-Connect via USB virtual serial port:
+Connect over the USB virtual serial port (CDC), or use the configurator's CLI tab.
 
-| Parameter | Value |
-|-----------|-------|
+| Setting | Value |
+|---------|-------|
 | Baud rate | 115200 |
 | Data bits | 8 |
 | Stop bits | 1 |
 
 ---
 
-## Basic Commands
+## System Commands
 
 | Command | Function |
 |---------|----------|
-| `help` | Show all commands |
-| `status` | System status overview |
-| `version` | Firmware version info |
-| `reboot` | Restart system |
-| `bootloader` | Enter DFU mode |
+| `help` | List all available commands |
+| `status` | Show flight controller status overview |
+| `status -v` | Show firmware version info |
+| `bootloader` | Reboot into DFU / system bootloader |
+| `msc` | Reboot into USB Mass Storage mode (export blackbox logs) |
+| `msp` | Reboot into MSP mode |
+| `usb` | Show USB CDC bridge state |
+| `top` | Show per-thread CPU usage |
 
 ---
 
 ## Parameter Commands
 
-| Command | Function |
-|---------|----------|
-| `param list` | List all parameters |
-| `param get <name>` | Get parameter value |
-| `param set <name> <value>` | Set parameter |
-| `param save` | Save to Flash |
-| `param load` | Load from Flash |
-| `param reset` | Reset to defaults |
-
----
-
-## Safety System Commands
+All flight controller parameters are read and written via the `config` command.
 
 | Command | Function |
 |---------|----------|
-| `failsafe status` | Show safety system status |
-| `failsafe test rc` | Test RC loss response |
-| `failsafe test arming` | Test arming conditions |
-| `failsafe reset` | Reset safety system state |
+| `config show` | List all parameters |
+| `config get <name>` | Get a parameter value |
+| `config set <name> <value>` | Set a parameter |
+| `config save` | Save to Flash |
+| `config reload` | Reload from Flash |
+| `config reset` | Reset to defaults |
+| `config help` | Show parameter command usage |
 
----
-
-## Motor Commands
-
-:::danger[Warning]
-Remove propellers before testing motors!
+:::note[Always save after changing]
+`config set` only changes the runtime value — you must run `config save` to persist it to Flash.
 :::
 
-| Command | Function |
-|---------|----------|
-| `motor test <motor#> <throttle>` | Test single motor |
-| `motor stop` | Stop motor test |
-| `motor info` | Show motor configuration |
-
-**Example**:
+**Examples**:
 
 ```bash
-motor test 1 0.1    # Motor 1, 10% throttle
-motor stop
+config get rate_pid_roll          # View Roll axis PID
+config set dterm_lpf_cutoff 90    # Set D-term LPF cutoff
+config set motor_pole_pairs 14    # Set motor pole pairs
+config save                       # Save
 ```
+
+:::tip[Array parameters]
+Array parameters such as `rate_pid_roll` and `rate_curve_roll` (which hold several values) are easier to edit in the graphical configurator — prefer the matching configurator page for those.
+:::
 
 ---
 
@@ -84,75 +75,83 @@ motor stop
 
 | Command | Function |
 |---------|----------|
-| `accel_cal` | Calibrate accelerometer |
+| `imu_cal acc` | Calibrate the accelerometer |
+| `imu_cal gyro` | Calibrate the gyro |
+| `imu_cal all` | Calibrate both accelerometer and gyro |
+| `imu_cal status` | Show calibration status |
+| `imu_cal info` | Show calibration info |
+| `imu_cal reset` | Clear calibration data |
+
+:::caution[Hold still while calibrating]
+Place the aircraft on a level surface and keep it still during accelerometer calibration.
+:::
 
 ---
 
-## Sensor Commands
+## Motor Commands
+
+:::danger[Safety warning]
+**Remove the propellers** before testing motors!
+:::
 
 | Command | Function |
 |---------|----------|
-| `imu info` | IMU sensor information |
-| `imu data` | Real-time IMU data |
+| `motor enable` | Enter motor test mode |
+| `motor disable` | Exit motor test mode |
+| `motor set <index> <throttle>` | Set a specific motor's throttle |
+| `motor get` | Show motor status / configuration |
+| `motor reload` | Reload motor configuration |
 
 ---
 
-## RC Commands
+## Sensors and Attitude
 
 | Command | Function |
 |---------|----------|
-| `rc info` | RC configuration info |
-| `rc data` | Real-time RC channel data |
+| `imu` | Print IMU accelerometer/gyro data |
+| `quat` | Print the current attitude quaternion |
+| `rc` | Print live RC channel data |
+| `rc reload` | Reload RC configuration |
 
 ---
 
-## Log Commands
+## Logging and Storage
 
 | Command | Function |
 |---------|----------|
-| `glog status` | Blackbox log status |
-| `glog start` | Start recording |
-| `glog stop` | Stop recording |
-| `msc` | Enter USB storage mode to export logs |
+| `glog start` | Start blackbox logging |
+| `glog stop` | Stop logging |
+| `glog state` | Show logging state |
+| `blackbox status` | Show blackbox storage status |
+| `blackbox info` | Show blackbox storage info |
+| `blackbox list` | List recorded logs |
+| `blackbox format` | Format blackbox storage |
+| `sd info` / `sd status` | SD card info / status |
+| `sd format` | Format the SD card |
+
+:::tip[Exporting logs]
+Run `msc` to reboot into USB Mass Storage mode — the flight controller appears as a read-only USB drive so you can copy logs straight to your computer.
+:::
 
 ---
 
-## Shortcuts
+## OSD Commands
+
+| Command | Function |
+|---------|----------|
+| `osd_status` | Show OSD status |
+| `osd_screen` | Switch OSD screen |
+| `osd_element` | Configure an OSD element |
+| `osd_reload` | Reload OSD layout from param storage |
+| `osd_refresh` | Force an OSD refresh |
+| `osd_test` | Refresh the OSD with test data |
+
+---
+
+## Keyboard Shortcuts
 
 | Shortcut | Function |
 |----------|----------|
 | Tab | Command completion |
-| ↑ / ↓ | History |
-| Ctrl+C | Cancel current command |
-
----
-
-## Common Parameters Reference
-
-### PID Parameters
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `PID_ROLL_P` | 45 | Roll P gain |
-| `PID_ROLL_I` | 80 | Roll I gain |
-| `PID_ROLL_D` | 35 | Roll D gain |
-| `PID_PITCH_P` | 45 | Pitch P gain |
-| `PID_PITCH_I` | 80 | Pitch I gain |
-| `PID_PITCH_D` | 35 | Pitch D gain |
-| `PID_YAW_P` | 45 | Yaw P gain |
-| `PID_YAW_I` | 80 | Yaw I gain |
-
-### Filter Parameters
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `GYRO_LPF_CUTOFF` | 100 | Gyro filter cutoff frequency |
-| `D_TERM_LPF_CUTOFF` | 80 | D-term filter cutoff frequency |
-
-### Safety System Parameters
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `FS_RC_LOSS_STAGE_1_TIME` | 150 | RC loss stage 1 time (ms) |
-| `FS_BAT_WARN_V` | 14.4 | Battery warning voltage |
-| `FS_BAT_CRIT_V` | 13.2 | Battery critical voltage |
+| ↑ / ↓ | Command history |
+| Ctrl+C | Cancel the current command |
