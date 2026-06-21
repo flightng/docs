@@ -3,88 +3,45 @@ title: 速率曲线
 description: 配置摇杆响应曲线
 ---
 
-:::caution[页面未完成]
-本页面内容尚未完成，仅供参考。
-:::
-
-速率曲线定义了摇杆位置与飞机旋转速度之间的关系。
+速率曲线定义了摇杆位置与飞机旋转速度之间的关系。在 [调参器](https://app.flightng.com) 的 **配置（Configuration）→ Rates** 部分设置。
 
 ---
 
-## 速率曲线类型
+## 三种曲线类型
 
-Fidelity X 支持多种速率曲线：
+Fidelity X 支持三种速率曲线算法，**每个轴（Roll / Pitch / Yaw）可以独立选择不同类型**：
 
-| 类型 | 特点 |
+| 类型 | 适合 |
 |------|------|
-| Betaflight Rate | 与 Betaflight 兼容，便于迁移 |
-| Actual Rate | 更直观，直接设置最大角速度 |
+| Betaflight Rate | 从 Betaflight 迁移的飞手，手感一致 |
+| Actual Rate | 喜欢直观设置、直接指定最大角速度的飞手 |
+| FlightOne Rate | 从 FalcoX / FlightOne 迁移的飞手 |
+
+各轴的曲线类型保存在 `rate_curve_type`（数组，依次对应 Roll / Pitch / Yaw）。
 
 ---
 
-## Betaflight Rate
+## 曲线参数
 
-### 参数
+无论哪种类型，每个轴的曲线参数都保存在对应的数组参数中：
 
-| 参数 | 说明 | 范围 |
-|------|------|------|
-| RC Rate | 基础速率 | 0.1 - 3.0 |
-| Super Rate | 摇杆末端增益 | 0.0 - 1.0 |
-| Expo | 中心区域曲线 | 0.0 - 1.0 |
+| 参数 | 轴 |
+|------|----|
+| `rate_curve_roll` | Roll |
+| `rate_curve_pitch` | Pitch |
+| `rate_curve_yaw` | Yaw |
 
-### 参数作用
+在调参器的 **Rates** 部分，每个轴提供三个可调项（以 Betaflight Rate 为例）：
 
-- **RC Rate**：影响整体响应，尤其是中心区域
-- **Super Rate**：影响摇杆末端的最大速度
-- **Expo**：降低中心区域灵敏度
+| 项 | 作用 |
+|----|------|
+| RC Rate | 基础速率，影响整体响应 |
+| Super Rate | 摇杆末端增益，影响最大角速度 |
+| Expo | 中心区域曲线，降低中心灵敏度 |
 
----
-
-## Actual Rate
-
-### 参数
-
-| 参数 | 说明 | 范围 |
-|------|------|------|
-| Center Sensitivity | 中心灵敏度 (°/s) | 50 - 500 |
-| Max Rate | 最大角速度 (°/s) | 200 - 2000 |
-| Expo | 曲线指数 | 0.0 - 1.0 |
-
-### 优点
-
-- 更直观易懂
-- 直接设置最大角速度
-- 独立调整中心灵敏度
-
----
-
-## 推荐设置
-
-### Betaflight Rate
-
-#### 入门
-
-| 参数 | Roll | Pitch | Yaw |
-|------|------|-------|-----|
-| RC Rate | 0.7 | 0.7 | 0.7 |
-| Super Rate | 0.5 | 0.5 | 0.5 |
-| Expo | 0.3 | 0.3 | 0.0 |
-
-#### 中级
-
-| 参数 | Roll | Pitch | Yaw |
-|------|------|-------|-----|
-| RC Rate | 1.0 | 1.0 | 1.0 |
-| Super Rate | 0.7 | 0.7 | 0.7 |
-| Expo | 0.2 | 0.2 | 0.0 |
-
-#### 高级
-
-| 参数 | Roll | Pitch | Yaw |
-|------|------|-------|-----|
-| RC Rate | 1.2 | 1.2 | 1.0 |
-| Super Rate | 0.8 | 0.8 | 0.7 |
-| Expo | 0.1 | 0.1 | 0.0 |
+:::tip[在哪里改]
+速率曲线包含多个数值，强烈建议在调参器 **配置 → Rates** 中用图形界面调整——可以实时看到曲线形状，比命令行直观得多。
+:::
 
 ---
 
@@ -92,38 +49,28 @@ Fidelity X 支持多种速率曲线：
 
 ### 中心太敏感
 
-增加 Expo：
-
-```bash
-param set ROLL_RC_EXPO 0.3
-param set PITCH_RC_EXPO 0.3
-param save
-```
+适当增加 **Expo**，让中心区域更柔和。
 
 ### 翻滚速度不够
 
-增加 Super Rate：
+适当增加 **Super Rate**，提高摇杆末端的最大角速度。
 
-```bash
-param set ROLL_SUPER_RATE 0.8
-param save
-```
+### Yaw 太灵敏 / 抖动
 
-### Yaw 抖动
-
-降低 Yaw 速率：
-
-```bash
-param set YAW_RC_RATE 0.8
-param save
-```
+单独降低 Yaw 轴的 **RC Rate** 或 **Super Rate**——得益于每轴独立曲线，调 Yaw 不会影响 Roll / Pitch。
 
 ---
 
 ## 从 Betaflight 迁移
 
-如果你从 Betaflight 迁移，可以直接使用相同的速率设置：
+如果你从 Betaflight 迁移：
 
-1. 选择 Betaflight Rate 类型
-2. 输入你在 Betaflight 中的 RC Rate、Super Rate、Expo 值
-3. 保存设置
+1. 将对应轴的曲线类型设为 **Betaflight Rate**
+2. 填入你在 Betaflight 中的 RC Rate、Super Rate、Expo 值
+3. 点击 **保存（Save）**
+
+手感即可无缝延续。
+
+:::note[保存设置]
+修改后记得点击 **保存（Save）**（命令行下为 `config save`）。
+:::

@@ -5,75 +5,72 @@ description: Fidelity X 固件配置概览
 
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-:::caution[页面未完成]
-本页面内容尚未完成，仅供参考。
-:::
-
-本章节介绍如何配置 Fidelity X 固件。
+Fidelity X 的配置主要通过图形化的 [Fidelity X Configurator](https://app.flightng.com) 完成——用支持 WebSerial 的浏览器（Chrome / Edge）打开即可，无需安装。
 
 ---
 
-## 参数系统
+## 连接飞控
 
-Fidelity X 使用参数系统进行配置。所有配置都通过 CLI 命令完成。
+1. 用 USB 线连接飞控与电脑
+2. 浏览器打开 [app.flightng.com](https://app.flightng.com)
+3. 点击右上角 **连接（Connect）**，在弹出的串口选择框中选择对应设备并授权
 
-### 基本操作
+连接成功后，导航栏会出现下列配置页面。
 
-| 命令 | 功能 |
+---
+
+## 配置器页面一览
+
+| 页面 | 作用 |
 |------|------|
-| `param list` | 列出所有参数 |
-| `param get <名称>` | 获取参数值 |
-| `param set <名称> <值>` | 设置参数 |
-| `param save` | 保存到 Flash |
-| `param load` | 从 Flash 加载 |
-| `param reset` | 重置为默认值 |
+| 状态（Status） | 姿态显示、飞控朝向编辑、IMU 校准、参数备份/恢复（YAML）、重启进 DFU |
+| 电机（Motors） | 电机映射、极对数、转向、CG 偏置、电机测试 |
+| 接收机（Receiver） | 摇杆预览、通道映射、极性、死区、AUX 功能绑定 |
+| OSD | OSD 布局编辑、元素开关、输出端口选择 |
+| 预设（Presets） | 应用官方预设配置 |
+| 配置（Configuration） | 速率曲线、滤波、PID 调参 |
+| 调试（Debug） | 实时 IMU 数据采集 |
+| 日志存储（Storage） | 黑盒存储概览、记录模式、USB 导出、格式化 |
+| 命令行（CLI） | 命令行终端（高级） |
 
-:::note[保存参数]
-修改参数后必须执行 `param save` 才能永久保存！
+固件刷写则在断开状态下的 **首页（Home）** 进行，详见 [固件烧录](/zh/fydelix/flashing/)。
+
+---
+
+## 「配置」页详解
+
+调参器的 **配置（Configuration）** 页分为三个部分：
+
+| 部分 | 内容 | 对应参数 |
+|------|------|----------|
+| Rates（速率） | 每轴速率曲线类型 + RC Rate / Super Rate / Expo | `rate_curve_type`、`rate_curve_roll/pitch/yaw` |
+| Filters（滤波） | RPM 滤波强度 | `rpm_filter_strength` |
+| PIDs | 角度环、角速度环、D 项滤波、TPA/TDA | `angle_pid_small/big`、`rate_pid_roll/pitch/yaw`、`dterm_lpf_cutoff` |
+
+:::note[保存设置]
+在配置器中修改后，点击页面的 **保存（Save）** 才会写入飞控 Flash。`重置（Reset）` 会清除所有参数恢复默认。
 :::
 
 ---
 
-## 配置分类
+## 分类指南
 
 <CardGrid>
   <LinkCard title="🎛️ PID 调参" description="调整飞行响应和手感" href="/zh/fydelix/configuration/pid-tuning/" />
   <LinkCard title="📈 速率曲线" description="调整操控灵敏度" href="/zh/fydelix/configuration/rate-profiles/" />
-  <LinkCard title="🛡️ 安全系统" description="配置 Failsafe 保护" href="/zh/fydelix/configuration/failsafe/" />
+  <LinkCard title="🛡️ 安全系统" description="了解 Failsafe 保护机制" href="/zh/fydelix/configuration/failsafe/" />
 </CardGrid>
 
 ---
 
-## 快速配置示例
+## 命令行方式（高级）
 
-### 5 寸自由式
-
-```bash
-param set PID_ROLL_P 45
-param set PID_ROLL_I 80
-param set PID_ROLL_D 35
-param set GYRO_LPF_CUTOFF 100
-param save
-```
-
-### Tiny Whoop
+偏好命令行的用户也可以在 **CLI** 页用 `config` 命令读写参数：
 
 ```bash
-param set PID_ROLL_P 35
-param set PID_ROLL_D 25
-param set GYRO_LPF_CUTOFF 80
-param save
+config get rate_pid_roll
+config set dterm_lpf_cutoff 90
+config save
 ```
 
----
-
-## 恢复默认设置
-
-```bash
-param reset
-param save
-```
-
-:::danger[警告]
-这将清除所有自定义配置！
-:::
+完整命令见 [CLI 命令参考](/zh/fydelix/cli-reference/)。

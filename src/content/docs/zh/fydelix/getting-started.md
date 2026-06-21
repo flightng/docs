@@ -19,8 +19,9 @@ description: 快速上手 Fidelity X 固件
 
 | 软件 | 用途 | 获取方式 |
 |------|------|----------|
-| Artery DFU 驱动 | 固件烧录 | [雅特力官网](https://www.arterytek.com/cn/support/index.jsp) |
-| Chrome/Chromium 浏览器 | 连接配置器 | 需要支持 WebUSB/WebSerial |
+| Fidelity X Configurator | 刷固件 / 配置飞控 | [app.flightng.com](https://app.flightng.com)（网页版，无需安装） |
+| Chrome / Edge 浏览器 | 运行配置器 | 需支持 WebSerial / WebUSB |
+| Artery DFU 驱动 | AT32 飞控刷固件（Windows） | [雅特力官网](https://www.arterytek.com/cn/support/index.jsp) |
 
 :::note[浏览器要求]
 需要使用支持 WebUSB/WebSerial 的浏览器，推荐使用 Chrome 或基于 Chromium 的浏览器（如 Edge、Brave 等）。
@@ -54,10 +55,10 @@ description: 快速上手 Fidelity X 固件
 
 ### 3. 首次连接
 
-烧录完成后，使用 Configurator 连接飞控：
+烧录完成后，用浏览器打开 [Fidelity X Configurator](https://app.flightng.com) 连接飞控：
 
-1. 点击右上角的 **连接** 按钮
-2. 在弹出菜单中选择 **FlightNG FC**
+1. 点击右上角的 **连接（Connect）** 按钮
+2. 在浏览器弹出的串口选择框中，选择对应的串口设备并授权
 
 ---
 
@@ -113,11 +114,13 @@ description: 快速上手 Fidelity X 固件
    - **映射通道**：调整通道对应关系
    - **极性**：修正方向反向的问题
    - **死区**：调整摇杆死区大小
-4. **AuxFunction** 部分可以为指定通道绑定功能：
+4. **AUX 功能（AuxFunction）** 部分可以为指定通道绑定开关功能：
    - 解锁（Arm）
    - 预解锁（Pre-arm）
-   - 自稳模式（Angle Mode）
-   - 其他功能...
+   - 自稳模式（Angle）
+   - 黑盒记录（Blackbox）
+   - 蜂鸣器（Beeper）
+   - 信标（Beacon）
 
 ---
 
@@ -142,7 +145,7 @@ description: 快速上手 Fidelity X 固件
 - [了解 Failsafe](/zh/fydelix/configuration/failsafe/) - 确保飞行安全
 
 :::note[关于滤波器]
-Fidelity X 固件采用硬编码滤波器设计，用户无需也不应当自行调整滤波器参数。
+Fidelity X 的滤波链路大部分已为你调校好。日常仅需在调参器 **配置（Configuration）** 页关注 D 项滤波（`dterm_lpf_cutoff`）与 RPM 滤波强度（`rpm_filter_strength`），无需深入底层参数。
 :::
 
 ---
